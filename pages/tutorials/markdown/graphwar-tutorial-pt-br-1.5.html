@@ -1,0 +1,207 @@
+<h1 id="function-syntax">FUNCTION SYNTAX</h1>
+<h2 id="variables">VARIABLES</h2>
+<p><code>x</code>, <code>y</code>, <code>y&#39;</code></p>
+<h2 id="operators">OPERATORS</h2>
+<ul>
+	<li><code>+</code> - Adição</li>
+	<li><code>-</code> - Subtração</li>
+	<li><code>/</code> - Divisão</li>
+	<li><code>*</code> - Multiplicação</li>
+	<li><code>^</code> - Potenciação</li>
+</ul>
+<h2 id="a-name-functions-functions-a-"><a name="functions">FUNCTIONS</a></h2>
+<p>Clique no link de cada item para ver um exemplo de seu uso</p>
+<ul>
+	<li><code>sqrt()</code> - <a href="https://s5.static.brasilescola.uol.com.br/be/2021/12/representacao-grafico-raiz-quadrada.jpg">Raiz Quadrada</a></li>
+	<li><code>log()</code> - <a href="https://static.todamateria.com.br/upload/gr/af/graficofuncaolog2.jpg">Logaritmo</a></li>
+	<li><code>ln()</code> - <a href="https://www.researchgate.net/publication/45890568/figure/fig1/AS:394183517982720@1470992082219/s-a-graph-illustrating-the-logarithmic-growth-of-1-t-2-log-PH-Sp-t.png">Logaritmo Natural</a></li>
+	<li><code>abs()</code> - O valor vai ser sempre positivo</li>
+	<li><code>sin()</code> - <a href="https://www.dicasdecalculo.com.br/wp-content/uploads/2017/02/gr%C3%A1ficos-de-fun%C3%A7%C3%B5es-trigonom%C3%A9tricas-seno-1.jpg">Seno</a></li>
+	<li><code>cos()</code> - <a href="https://s1.static.brasilescola.uol.com.br/be/2021/04/funcao-cosseno.jpg">Cosseno</a></li>
+	<li><code>tan()</code> - <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvaWEbZthjOhGlMaBg9HtdGr91BO5Y2BhxcRGTaSDuT7Qkm6OGZw-rGCTcVI0HMucoz2Q&amp;usqp=CAU">Tangente</a></li>
+	<li><code>exp()</code> - <a href="https://static.todamateria.com.br/upload/ex/po/expoencialgrafico3.jpg">Função Exponensial</a></li>
+</ul>
+<h1 id="no-es-b-sicas">NOÇÕES BÁSICAS</h1>
+<h2 id="vari-veis">VARIÁVEIS</h2>
+<p>Ao ver algumas funções prontas você vai se deparar com algumas variáveis (Para burros: Letras pra mudar depois), aqui está alguns exemplos de como lidar com cada uma<br><br></p>
+<p>(Lembre-se do básico de matemática, duas letras juntas como <code>sin(ax)</code> é o mesmo que <code>sin(a*x)</code>)</p>
+<ul>
+	<li><code>h</code> - Altura (Se você quer que vá para cima ou baixo, use positivo para ir pra cima e negativo para ir para baixo)</li>
+	<li>
+		Exemplo:
+		<ul>
+			<li>Se vocẽ está em <code>-5</code> e você quer ir para cima em <code>10</code>, então <code>h=10</code> e se você está em <code>10</code> e quer ir para baixo em <code>-2</code>, então <code>h=-12</code></li>
+		</ul>
+	</li>
+	<li>Normalmente você pode adicionar um <code>+</code> para combinar várias funções de uma vez</li>
+	<li>Ao adicionar um <code>-</code> no começo da função, faz com que a linha dê um flip (Ao invés de ir para cima, então vai para baixo e vice-versa)</li>
+</ul>
+<h2 id="gameplay">GAMEPLAY</h2>
+<p>Caso não tenha notado, seu soldado sempre via estar na parte negativa do gráfico, o que acontece é que ao trocar de turno, o mapa da um flip (Eu demorei pra perceber isso), tente imaginar no gráfico diversos quadradinhos que delimitam o valor de cada coordenada, como em um plano cartesiano comum (Ao usar algumas das funções você vai começar a notar melhor onde cada quadrado começa e termina, mas pelo que percebi eles possuem o tamanho aproximado de um ponteiro de mouse)<br><br></p>
+<p>A arena vai de <code>-25</code> a <code>25</code> na horizontal (Eixo X) e <code>-15</code> a <code>15</code> na vertical (Eixo Y), sendo o ponto central o <code>0</code>. Analise essa <a href="https://sites.google.com/site/skophysics/_/rsrc/1472854165970/home/geometria-analitica/plano%202.png">imagem</a> para ter uma noção básica de como um plano cartesiano funciona<br><br></p>
+<p>Vamos usar a função <code>7/(1+exp(-100*(x-5)))</code> (<code>h/(1+exp(-a*(x-b)))</code>) como exemplo, que tem como objetivo formar <a href="https://cdn.discordapp.com/attachments/996210289592782889/1005294338181447771/unknown.png">isso</a><br>
+	Vamos por partes, olhando no <code>x-5</code>, percebemos que estou mandando a linha ir 5 quadrados para a direita, o <code>h</code> mostra que depois disso é para subir 7 quadrados num ângulo de <code>-100</code> (olhe em <a href="#stepfunction">STEP FUNCTION</a>)<br><br>
+</p>
+<p>Obviamente essa é uma das funções mais simples e nem todas vão seguir exatamente o mesmo padrão, só usei a fins de exemplficar como se deve usar as funções e como funciona a gameplay do jogo</p>
+<h1 id="steamlists">STEAMLISTS</h1>
+<p>Esse tutorial foi pego do site <a href="https://steamlists.com/graphwar-useful-formulas-game-basics/">steamlists</a>, algumas informações foram alteradas</p>
+<h2 id="manipulando-f-rmulas">MANIPULANDO FÓRMULAS</h2>
+<p>O segredo é usar as formulas e não se importar com o valor de <code>x</code> de seus soldados<br>
+	As duas melhoras formas são <code>2^x</code> e <code>tanh(x)</code> e combinando elas<br>
+</p>
+<p>É difícil mirar uma parabola quando você não sabe a posição do seu <code>x</code>. Seno e Cosseno vão se morrer estranho dependendo do valor de seu <code>b</code> e <code>c</code><br></p>
+<p>Se a função for exponensial, nós podemos ajustar <code>a</code>, <code>b</code>, <code>c</code> e a base para direita a para cima ou baixo para acertar o alvo</p>
+<h2 id="ab-x-c-sin-40x-de-x-f-">ab^(x+c) + sin(40x)*de^(x+f)</h2>
+<p><img src="https://steamlists.com/wp-content/uploads/2022/07/Graphwar-Useful-Formulas-Game-Basics-My-Favorite-Combinations-5AB83FF-steamlists-com.png" alt="Imagem"></p>
+<p>Ex: <code>(1/5)*2^((x-2)/3) + sin(40x)*(1/2)*2^(x/2.5-4)</code></p>
+<h2 id="a-e-x-c-2-sin-20x-">a*e^(-(x+c)^2*sin(20x)</h2>
+<p><img src="https://steamlists.com/wp-content/uploads/2022/07/Graphwar-Useful-Formulas-Game-Basics-My-Favorite-Combinations-FAE500A-steamlists-com.jpg" alt="Imagem"></p>
+<p>Como eu mencionei antes nós usamos <code>a</code>, <code>b</code> e <code>c</code> em nossa função (<code>af(bx+c)</code>) e funções específicas ignorama a posição do <code>x</code> de nossos soldados. Para os dois soldados, a ação acontece em relativo ao <code>c</code> e apenas a altura muda entre os soldados<br><br></p>
+<p>Nós podemos usar apenas o <code>sin</code>, <code>x^2</code> ou etc</p>
+<h2 id="tanh">tanh</h2>
+<p>Infelizmente graphwar não possui funçõe trig hiperbólico, então nós escrevemos ela por inteiro<br>
+	<code>tanh(x) = (e^(x)-e^(-x))/(e^(x)+e^(-x))</code><br>
+</p>
+<p><img src="https://steamlists.com/wp-content/uploads/2022/07/Graphwar-Useful-Formulas-Game-Basics-My-Favorite-Combinations-7F854A6-steamlists-com.png" alt="Imagem"></p>
+<p><br></p>
+<p><code>tanh(x+c) = (e^(x+c)-e^(-(x+c)))/(e^(x+c)+e^(-(x+c)))</code><br></p>
+<p>Ex: <code>5*tanh(x-4) = 5*(e^(x-4)-e^(-(x-4)))/(e^(x-4)+e^(-(x-4)))</code></p>
+<h1 id="discord">DISCORD</h1>
+<p>Esse tutorial foi tirado do discord oficial do graphwar, algumas coisas podem ter sido alteradas</p>
+<h2 id="-a-name-stepfunction-step-function-a-"><a name="stepfunction">STEP FUNCTION</a></h2>
+<ul>
+	<li><code>h/(1+exp(-a*(x-b)))</code></li>
+</ul>
+<p><img src="https://cdn.discordapp.com/attachments/996210289592782889/1005294338181447771/unknown.png" alt="Imagem"></p>
+<ul>
+	<li><code>h</code> - Altura (Se você quer que vá para cima ou baixo, use positivo para ir pra cima e negativo para ir para baixo)</li>
+	<li>
+		<p>Exemplo:</p>
+		<ul>
+			<li>Se vocẽ está em <code>-5</code> e você quer ir para cima em <code>10</code>, então <code>h=10</code> e se você está em <code>10</code> e quer ir para baixo em <code>-2</code>, então <code>h=-12</code></li>
+		</ul>
+	</li>
+	<li>
+		<p><code>x-b</code> é onde você quer que a curva aconteceça em <code>x</code> se você usar <code>x-2</code> a curva vai acontecer em <code>x=2</code>, se você digitar <code>x+10</code>, a curva vai acontecer em <code>x=-10</code></p>
+		<ul>
+			<li>Se você usar <code>x+a</code>, a curva acontece antes de <code>x=0</code>, os soldados estão sempre no ponto negativo do quadro, se você usar <code>x+a</code> a curva agora acontece no ponto negativo <code>x-a</code> no ponto positivo, por exemplo, se você usar <code>x+5</code> a curva acontece em <code>x=-5</code></li>
+		</ul>
+	</li>
+	<li>
+		<p><code>a</code> é o ângulo da curva, se você usar <code>-1</code> vai fazer uma onda, melhor usar <code>a=-100</code> para fazer uma curva perfeita</p>
+	</li>
+</ul>
+<h2 id="double-absolute">DOUBLE ABSOLUTE</h2>
+<ul>
+	<li><code>aabs(x-b)-aabs(x-c)</code></li>
+</ul>
+<p><img src="https://cdn.discordapp.com/attachments/996210289592782889/1005294981608652840/unknown.png" alt="Imagem"></p>
+<p>Nessa função nós vamos ter que usar ângulo, o ângulo se aplica ao <code>a</code><br>
+	As medidas de ângulos são <code>0.5=22.5</code> e <code>1=45º</code><br>
+	Depois de <code>1</code>, o ângulo começa a ter diferentes progreções e não tem como alcançar 90º<br>
+</p>
+<ul>
+	<li>
+		<p><code>b</code> e <code>c</code>, se você entende de ângulo, você vai entender facilmente</p>
+		<ul>
+			<li><code>b</code> - É onde o ângulo começa, vamos dizer que você usou <code>a=1</code> então a linha vai 45º para <code>c</code></li>
+		</ul>
+	</li>
+	<li>
+		<p><code>aabs(x-b)-aabs(x-c)</code></p>
+	</li>
+</ul>
+<p>Bem, no caso de absoluto, para ir para baixo você tem que reverter os dois lanes, porque na primeira parte você está dizendo que ocê quer ir para cim acom o <code>+</code> ou para baixo com o <code>-</code>, e na segundo parte você está cancelando a prmeira, para a linha parar de ir para cima ou para baixo, as duas lanes precisam ser opostas, então <code>a</code> tem que ser igual</p>
+<ul>
+	<li><code>-aabs(x-b)+aabs(x-c)</code></li>
+</ul>
+<h2 id="lorentz">LORENTZ</h2>
+<ul>
+	<li>
+		<p><code>h/(1+(X-a)^2)</code>
+			<img src="https://cdn.discordapp.com/attachments/996210289592782889/1005295595067539456/unknown.png" alt="Imagem">
+		</p>
+	</li>
+	<li>
+		<p><code>h</code> - É a altura na qual o &quot;lore&quot; vai subir, <code>x-a</code> ou <code>x+a</code> é para onde não vai ter o pico do &quot;lore&quot;, se você usar negativo no começo, o &quot;lore&quot; vai para baixo</p>
+	</li>
+</ul>
+<h2 id="spike">SPIKE</h2>
+<ul>
+	<li><code>b/(((50(x-a))^2)+1)</code>
+		<img src="https://cdn.discordapp.com/attachments/996210289592782889/1005295662797176842/unknown.png" alt="Imagem">
+	</li>
+</ul>
+<p>É litralmente o <strong>lerentz</strong> mas com um diferencial que é multiplicado por <strong>50</strong>, você pode mudar esse número pra qualquer um que quiser, mas números altos não interferem em nada<br><br></p>
+<p>Mesma regra pro <strong>lorentz</strong>, <code>h</code> é a altura, <code>x-a</code> ou <code>x+a</code> é onde acontece, se você usar negativo e <code>h</code> vai para baixo</p>
+<h2 id="spawn-waves">SPAWN WAVES</h2>
+<ul>
+	<li><code>hsin(bx)/(1+exp(-100(x-a)))</code></li>
+</ul>
+<p><img src="https://cdn.discordapp.com/attachments/996210289592782889/1005295883983782018/unknown.png" alt="Imagem"></p>
+<p>Isso é básicamente <code>sin+exp</code>, sua seta para um <strong>sin</strong> aparecer onde você escolheu em <strong>exp</strong>, se você já notou a função básica do <code>exp</code> isso vai ser fácil, o <strong>sin</strong> vai aparecer no <code>x</code> que você escolher em <code>x-a</code> ou <code>x+a</code>, <code>h</code> é o tamanho da onde e <code>b</code> a frequência das ondas</p>
+<p><img src="https://cdn.discordapp.com/attachments/996210289592782889/1005296059372810310/unknown.png" alt="Imagem2"></p>
+<h1 id="youtube">YOUTUBE</h1>
+<p>Esse tutorial foi tirado desse <a href="https://youtu.be/EHuQe7SKwkA">vídeo</a> do youtube</p>
+<h2 id="sin-x-">sin(x)</h2>
+<p>Ondas simultâneas</p>
+<ul>
+	<li>Adicionando um número no começo (Ex: <code>2sin(x)</code>), muda o tamanho das ondas</li>
+	<li>Adicionando um número à esquerda do <code>x</code> muda a frequência das ondas (Ex: <code>sin(5x)</code>) quanto maior o número, menor o intervalo entre uma onda e outra</li>
+</ul>
+<h1 id="spike">SPIKE</h1>
+<p>Uma linha com um espinho</p>
+<pre><code><span class="hljs-code">            ^   &lt;- H</span>
+<span class="hljs-code">            ||</span>
+<span class="hljs-code">            ||</span>
+<span class="hljs-code">            /\</span>
+<span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-emphasis">_/  \_</span><span class="hljs-strong">_____</span><span class="hljs-emphasis">___</span>_
+</code></pre>
+<ul>
+	<li>
+		<code>h/(1+(-a*(x+b))^2)</code>
+		<ul>
+			<li><code>h</code> - Altura (Adicione <code>-</code> para ir para baixo)</li>
+			<li><code>b</code> - Largura do espinho (<code>14</code>)</li>
+			<li><code>a</code> - Distância até o espinho aparecer (<code>69</code> é um espinho bem fino e sem curvatura na base)</li>
+		</ul>
+	</li>
+</ul>
+<h1 id="double-abs">DOUBLE ABS</h1>
+<p>Cria uma linha diagonal</p>
+<pre><code>              C
+              <span class="hljs-string">|</span>
+              v
+    A/<span class="hljs-number">2</span> ------ _____________
+    <span class="hljs-string">|          /</span>
+    <span class="hljs-string">|         /</span>
+    <span class="hljs-string">|        /</span>
+------------  &lt;- B
+</code></pre>
+<ul>
+	<li>
+		<code>h(abs(x+b)-abs(x+c))</code>
+		<ul>
+			<li><code>h</code> - Altura da linha dividido por dois (<code>h/2</code>)</li>
+			<li><code>b</code> - Início da diagonal</li>
+			<li><code>c</code> - Final da diagonal</li>
+		</ul>
+	</li>
+	<li>Caso queira fazer um flip (Adicionar <code>-</code> ao início), perceba que o <code>b</code> e <code>c</code> irão &quot;inverter&quot;</li>
+</ul>
+<h1 id="sin">SIN</h1>
+<p>Usando apenas o <code>sin(x)</code>, a linha sairá como uma onda (Como já mostrado <a href="#functions">aqui</a>)<br>
+	Com <code>sin(ax)</code>, a frequência da onda será alterada (Quanto maior o número, menor a frequência)
+	Você também pode usar <code>hsin(x)</code> (ou combinar com <code>sin(ax)</code>) para aumentar a altura da onda<br><br>
+</p>
+<p>Combinando com <strong><a href="#stepfunction">STEP FUNCTION</a></strong> (<code>h/(1+exp(-a*(x-b)))</code>) nós temos o <strong>WIDE LINE</strong></p>
+<h1 id="wide-line">WIDE LINE</h1>
+<p>Uma linha reta com um <strong>SIN</strong></p>
+<ul>
+	<li>
+		<code>sin(hx)/(1+exp(-a*(x+c)))</code> ou <code>d*sin(x*h)/(1+exp(-a*(x+c)))</code>
+		<ul>
+			<li><code>c</code> - Onde o seno começa</li>
+		</ul>
+	</li>
+</ul>

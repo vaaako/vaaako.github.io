@@ -1,0 +1,19 @@
+body {
+	font-family: Arial;
+}
+
+.box {
+	width: 400px;
+	height: auto;
+
+	text-align: center;
+	border: 2px solid;
+	/*background: #369;*/
+	/*border-radius: 25px;*/
+
+	/* Magin */
+	padding: 20px;
+	margin: 20px auto; /* Center using margin left and right auto*/
+}
+
+
