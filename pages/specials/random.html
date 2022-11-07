@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fernanda | Random</title>
+
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+	<script type="text/javascript" src="../../assets/json/subs.json"></script>
+
+	<script type="text/javascript"> 
+		const randSubs = subs[Math.floor(Math.random() * subs.length)];
+		window.onload = function() { // Execute after HTML is loaded
+			document.getElementById("substantivo").innerHTML = randSubs;
+		}
+	</script>
+</head>
+<body class="box">
+	<h2>Random</h2>
+	Ideia de um amigo (Caio), que seria pegar uma imagem aleatória junto de um substantivo aleatório e juntar os dois.
+	<hr><br>
+
+	 <img src="https://random.imagecdn.app/400/400"> <!-- Random Image -->
+	 <h2 id="substantivo"></h2>
+
+</body>
+</html>
