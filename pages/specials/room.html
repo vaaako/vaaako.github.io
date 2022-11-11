@@ -13,52 +13,50 @@
 			/*font-family: 'SF Pixelate', sans-serif;*/
 			font-family: 'Amiga Forever Pro2', sans-serif;
 
-			font-size: 24px;
+			font-size: 16px;
 			color: orange;
 
 			background: black;
 		}
 
-		@media screen and (min-width: 100px) {
-			#contentArea, #contentArea textarea {
-				font-family: 'Amiga Forever Pro2', sans-serif;
-				color: orange;
+		#contentTextArea {
+			font-family: 'Amiga Forever Pro2', sans-serif;
+			color: orange;
 
-				width: 95vw;
-				height: 80vh;
-				background: transparent;
+			width: 95vw;
+			height: 80vh;
+			background: transparent;
 
-				border: groove black;
+			border: groove black;
 
-				resize: none;
-			}
+			resize: none;
+		}
 
-			#inputArea {
-				position: relative;
-				padding-top: 30px;
-			}
+		#inputArea {
+			position: relative;
+			/*padding-top: 10px;*/
+		}
 
-			input[type="text"], input[type="text"]:focus {
-				font-family: 'Amiga Forever Pro2', sans-serif;
-				font-size: 16px;
-				color: orange;
+		input[type="text"], input[type="text"]:focus {
+			font-family: 'Amiga Forever Pro2', sans-serif;
+			font-size: 16px;
+			color: orange;
 
-				background:  transparent;
-				/*border: none;*/
-				/*outline: none;*/
+			background:  transparent;
+			/*border: none;*/
+			/*outline: none;*/
+			margin-top: 10px;
+			margin-bottom: 10px;
+			width: 75vw;
+		}
 
-				margin-bottom: 10px;
-				width: 85vw;
-			}
+		#submit {
+			font-family: 'Amiga Forever Pro2', sans-serif;
+			font-size: 16px;
+			color: orange;
 
-			#submit {
-				font-family: 'Amiga Forever Pro2', sans-serif;
-				font-size: 16px;
-				color: orange;
-
-				background: transparent;
-				/*padding: 10px;*/
-			}
+			background: transparent;
+			padding: 5px;
 		}
 	</style>
 
@@ -86,8 +84,8 @@
 	</div>
 	
 	<div id="inputArea">
+		<button id="submit" onclick="addText();">[>]</button>
 		<input type="text" autocomplete="off" id="choiceInput">
-		<button id="submit" onclick="addText();">Submit</button>
 	</div>
 </body>
 </html>
