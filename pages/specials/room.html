@@ -24,16 +24,17 @@
 			color: orange;
 
 			width: 95vw;
-			height: 80vh;
+			height: 85vh;
 			background: transparent;
 
-			border: groove black;
-
+			/*border: groove black;*/
+			border: none;
 			resize: none;
+			outline: none;
 		}
 
 		#inputArea {
-			position: relative;
+			/*position: relative;*/
 			/*padding-top: 10px;*/
 		}
 
@@ -41,33 +42,47 @@
 			font-family: 'Amiga Forever Pro2', sans-serif;
 			font-size: 16px;
 			color: orange;
+			width: 76%;
+			/*width: 73vw;*/
 
 			background:  transparent;
-			/*border: none;*/
-			/*outline: none;*/
+			border: groove darkorange; 3px;
+			outline: none;
+
+
+			/*padding-bottom: 15px;*/
 			margin-top: 10px;
-			margin-bottom: 10px;
-			width: 75vw;
+			/*margin-bottom: 10px;*/
 		}
 
-		#submit {
+		#submitButton {
 			font-family: 'Amiga Forever Pro2', sans-serif;
 			font-size: 16px;
-			color: orange;
+			color: darkorange;
 
 			background: transparent;
+			border: none;
+
 			padding: 5px;
 		}
 	</style>
 
 	<script type="text/javascript">
-		var currentText = "";
-		document.getElementById("contentTextArea").value = "";
+		window.onload = () => { // Execute after HTML is loaded
+			let choiceInput = document.getElementById("choiceInput");
+			
+			// Function to check if enter was pressed
+			choiceInput.addEventListener("keypress", (e) => {
+				console.log(e.which, e.target.value)
+				if(e.which==13) // Enter key
+					addText();
+			});
+		}
 
 		function addText() {
 			let content = document.getElementById("choiceInput").value.trim();
-			let textarea = document.getElementById("contentTextArea");
 			if(!content) return; // Is blank
+			let textarea = document.getElementById("contentTextArea");
 
 			textarea.value += content+"\n";
 			textarea.scrollTop = textarea.scrollHeight;
@@ -75,7 +90,6 @@
 			// Reset input
 			document.getElementById("choiceInput").value = "";
 		}
-
 	</script>
 </head>
 <body>
@@ -84,7 +98,9 @@
 	</div>
 	
 	<div id="inputArea">
-		<button id="submit" onclick="addText();">[>]</button>
+		<input type="submit" value="[>]" onclick="addText()" id="submitButton">
+
+		<!-- <button id="submitButton" onclick="	addText();">[>]</button> -->
 		<input type="text" autocomplete="off" id="choiceInput">
 	</div>
 </body>
