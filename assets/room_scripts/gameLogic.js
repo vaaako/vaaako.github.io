@@ -67,6 +67,7 @@ async function showInstructions() {
 		+ "Resumindo: Seja objetivo para que suas ações sejam bem interpretadas, tente usar \"Verbo\" + \"adjetivo\"\n"
 		+ "Dica: Cheque/olhe o objeto antes de interagir com ele\n"
 		+ "Recomendo jogar de uma vez só, tendo em vista que não tem função de salvar progresso.\n"
+		+ "USE VERBOS NO INFINITIVO. Exemplo: \"bato\" vira \"bater\""
 		+ "Lembre-se de escrever apenas UMA ação por vez e de que você pode e deve sempre olhar em volta. Bom jogo.\n\n"
 	,5);
 }
