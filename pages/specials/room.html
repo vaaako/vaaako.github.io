@@ -10,7 +10,6 @@
 
 	<style type="text/css">
 		body {
-			/*font-family: 'SF Pixelate', sans-serif;*/
 			font-family: 'Amiga Forever Pro2', sans-serif;
 
 			font-size: 16px;
@@ -21,38 +20,18 @@
 
 		#contentTextArea {
 			font-family: 'Amiga Forever Pro2', sans-serif;
+			font-size: 16px;
 			color: orange;
 
 			width: 95vw;
 			height: 85vh;
 			background: transparent;
+			white-space: pre-wrap;
 
 			/*border: groove black;*/
 			border: none;
 			resize: none;
 			outline: none;
-		}
-
-		#inputArea {
-			/*position: relative;*/
-			/*padding-top: 10px;*/
-		}
-
-		input[type="text"], input[type="text"]:focus {
-			font-family: 'Amiga Forever Pro2', sans-serif;
-			font-size: 16px;
-			color: orange;
-			width: 76%;
-			/*width: 73vw;*/
-
-			background:  transparent;
-			border: groove darkorange; 3px;
-			outline: none;
-
-
-			/*padding-bottom: 15px;*/
-			margin-top: 10px;
-			/*margin-bottom: 10px;*/
 		}
 
 		#submitButton {
@@ -65,43 +44,69 @@
 
 			padding: 5px;
 		}
+
+		input[type="text"], input[type="text"]:focus {
+			font-family: 'Amiga Forever Pro2', sans-serif;
+			font-size: 16px;
+			color: orange;
+			width: 76%;
+
+			background:  transparent;
+			border: groove darkorange; 3px;
+			outline: none;
+
+			margin-top: 10px;
+
+		}
+
 	</style>
-
-	<script type="text/javascript">
-		window.onload = () => { // Execute after HTML is loaded
-			let choiceInput = document.getElementById("choiceInput");
-			
-			// Function to check if enter was pressed
-			choiceInput.addEventListener("keypress", (e) => {
-				console.log(e.which, e.target.value)
-				if(e.which==13) // Enter key
-					addText();
-			});
-		}
-
-		function addText() {
-			let content = document.getElementById("choiceInput").value.trim();
-			if(!content) return; // Is blank
-			let textarea = document.getElementById("contentTextArea");
-
-			textarea.value += content+"\n";
-			textarea.scrollTop = textarea.scrollHeight;
-
-			// Reset input
-			document.getElementById("choiceInput").value = "";
-		}
-	</script>
 </head>
 <body>
+
 	<div id="contentArea">
 		<textarea id="contentTextArea" readonly></textarea>
 	</div>
 	
 	<div id="inputArea">
-		<input type="submit" value="[>]" onclick="addText()" id="submitButton">
-
-		<!-- <button id="submitButton" onclick="	addText();">[>]</button> -->
+		<input type="submit" value="[>]" onclick="readInput()" id="submitButton">
 		<input type="text" autocomplete="off" id="choiceInput">
 	</div>
+
+	<script type="text/javascript" src="../../assets/room_scripts/gameLogic.js"></script>
+	<script type="text/javascript" src="../../assets/room_scripts/main.js"></script>
+	<script type="text/javascript" src="../../assets/room_scripts/actions.js"></script>
+
 </body>
 </html>
+<!-- 
+
+		 ██▀███   ▒█████   ▒█████   ███▄ ▄███▓
+		▓██ ▒ ██▒▒██▒  ██▒▒██▒  ██▒▓██▒▀█▀ ██▒
+		▓██ ░▄█ ▒▒██░  ██▒▒██░  ██▒▓██    ▓██░
+		▒██▀▀█▄  ▒██   ██░▒██   ██░▒██    ▒██ 
+		░██▓ ▒██▒░ ████▓▒░░ ████▓▒░▒██▒   ░██▒
+		░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░   ░  ░
+		  ░▒ ░ ▒░  ░ ▒ ▒░   ░ ▒ ▒░ ░  ░      ░
+		  ░░   ░ ░ ░ ░ ▒  ░ ░ ░ ▒  ░      ░   
+		   ░         ░ ░      ░ ░         ░   
+
+		Press Enter to start -->
+<!-- 
+ ██▀███   ▒█████   ▒█████   ███▄ ▄███▓
+▓██ ▒ ██▒▒██▒  ██▒▒██▒  ██▒▓██▒▀█▀ ██▒
+▓██ ░▄█ ▒▒██░  ██▒▒██░  ██▒▓██    ▓██░
+▒██▀▀█▄  ▒██   ██░▒██   ██░▒██    ▒██ 
+░██▓ ▒██▒░ ████▓▒░░ ████▓▒░▒██▒   ░██▒
+░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░   ░  ░
+  ░▒ ░ ▒░  ░ ▒ ▒░   ░ ▒ ▒░ ░  ░      ░
+  ░░   ░ ░ ░ ░ ▒  ░ ░ ░ ▒  ░      ░   
+   ░         ░ ░      ░ ░         ░   
+ -->
+
+<!-- 
+ ▄▄▄              • ▌ ▄ ·. 
+▀▄ █·▪     ▪     ·██ ▐███▪
+▐▀▀▄  ▄█▀▄  ▄█▀▄ ▐█ ▌▐▌▐█·
+▐█•█▌▐█▌.▐▌▐█▌.▐▌██ ██▌▐█▌
+.▀  ▀ ▀█▄▀▪ ▀█▄▀▪▀▀  █▪▀▀▀
+ -->
