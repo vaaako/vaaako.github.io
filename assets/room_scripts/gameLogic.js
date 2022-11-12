@@ -11,7 +11,7 @@ async function showText(message, time=10) {
 	for(let i=0; i<message.length; i++) {
 		textarea.value += message[i];
 		textarea.scrollTop = textarea.scrollHeight; // Scrol down
-		await new Promise(r => setTimeout(r, time/5)); // >time<
+		await new Promise(r => setTimeout(r, time)); // >time<
 	}
 
 	showingText = false;
