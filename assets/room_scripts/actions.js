@@ -433,7 +433,7 @@ async function checkKey() {
 	await printSeparator();
 }
 
-async function checkFloor() {
+async function checkDown() {
 	await showText("O chão? Nada de especial por aqui, nenhuma passagem secreta, nem escri... Ops... Uma escritura. \"Arzt\", não tenho onde colocar isso, quem é Arzt?", 30);
 	await printSeparator();
 }
