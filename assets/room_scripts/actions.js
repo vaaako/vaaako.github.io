@@ -455,6 +455,14 @@ async function checkKey() {
 	await printSeparator();
 }
 
+async function eatKey() {
+	await showText("Por que tenho a sensação de que alguém tentaria comer isso? É pequeno e cabe na boca, mas não vejo nennhuma situação possível em que...", 30);
+	await showText("Você... Comeu a chave... Por que eu fiz isso?", 50);
+	
+	await printSeparator();
+	haveKey = false
+}
+
 async function checkDown() {
 	await showText("O chão? Nada de especial por aqui, nenhuma passagem secreta, nem escri... Ops... Uma escritura. \"Arzt\", não tenho onde colocar isso, quem é Arzt?", 30);
 	await printSeparator();
