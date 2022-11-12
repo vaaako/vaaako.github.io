@@ -278,6 +278,11 @@ async function touchSnail() {
 
 async function attackSnail() {
 
+	if(snailIsSmashed) {
+		await impossibleAction();
+		return
+	}
+
 	await showText(
 		"Você sente uma vontade, uma coisa que você nunca sentiu antes, uma vontade subita de acabar com a vida daquele caracol insignificante.\n"
 		+ "Sua existência te irrita sem motivo aparente. Ele tenta andar mesmo sabendo que não vai a lugar nenhum. Por que ele ainda tenta? De onde vem essa vontade? Por que ele faz isso? Esse caracol é tão estúpido.\n"
