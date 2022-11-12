@@ -427,6 +427,19 @@ async function checkUp() {
 	await printSeparator();
 }
 
+async function useUp() {
+	await showText(
+		"Você tenta jogar a chave na lâmpada, mas por mais esforço que você fassa, por algum motivo a chave nunca chega a tocar o teto. Isso me faz pensar na torre de babel, nós tentando chegar a luz, que poderia ser uma representação divina, ele só está lá, iluminando mas nunca fazendo nada além de iluminar, só esperando que nós façamos algo."
+		+ "Por que ele não faz algo? Lâmpada estúpida"
+	,30);
+}
+
+async function eatUp() {
+	await showText("Mesmo se eu quisesse fazer isso, não tenho como alcançar, além do mais, eu não sinto fome, consequentemente não sinto vontade de comer. Esses pensamentos invonluntários estão começando a me pertubar.",30)
+	await printSeparator();
+
+}
+
 async function checkKey() {
 	if(!haveKey) {
 		await impossibleAction();
