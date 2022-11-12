@@ -13,7 +13,7 @@ async function showText(message, time=10) {
 		textarea.value += message[i];
 
 		if(skip) {
-			let msg = message.slice(1, message.length);
+			let msg = message.slice(i+1, message.length);
 			textarea.value += msg;
 			skip = false;
 			showingText = false;
