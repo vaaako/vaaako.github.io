@@ -37,7 +37,7 @@ async function showStart() {
 
 		+ "O caracol é tão lento que parece estar parado, você só acha que ele está se movendo, pelo seu barulho gosmento, tão imperceptivel que só da para escutar por causa do silêncio insurdecedor da sala e seu movimento de um criatura imível tentando se locomover.\n"
 		+ "Por último, na sua direita  um olho gigante bem no centro da parede, você não tinha notado sua presença até então, mas desde o começo tem sentido que algo estava te observando, ele não é grande o suficiente para cobrir ou chegar à extremidade da parede, dá para se dizer que sua córnea é do tamanho de um prato."
-	,10);
+	,30);
 
 	await checkAround();
 }
@@ -67,7 +67,7 @@ async function checkAround() {
 		+ eye + " te observando à sua direita, o cubo atrás de você, " + snail + " à sua esquerda e " + door + " à sua frente.\n"
 		+ "Nenhuma janela ou passagem secreta aparente.\n\n"
 		+ "Você tem: "+inventory+"\n"
-	,10);
+	,30);
 
 	await printSeparator();
 }
@@ -182,7 +182,7 @@ async function checkCube() {
 		+ "O que estaria me causando esse desconforto? O olho? Não, não é um desconforto de estar sendo observado, é quase como um desconforto reflexivo, como se minha vida estivesse passando na minha mente e eu estivesse julgando minhas ações passadas.\n"
 		+ "Como se eu estivesse notando o vazio na barriga que sinto a todo momento quando paro para pensar. Quando paro para pensar na vida e sinto um enorme abismo dentro de mim, me consumindo por dentro, enquanto me questiono... Questiono minhas ações... Questiono minhas escolhas... Questiono minhas amizades.\n" 
 		+ "Para fugir dessa sensação eu paro de pensar, me torno alguém que age por impulso, como um mecanismo de defesa dessa sensação vazia e abismática, mas sinto que não é esse o certo a se fazer... Eu deveria encarar essa sensação, mas então quando ela acabaria? Talvez só na minha morte."
-	,10);
+	,30);
 
 	await printSeparator();
 }
@@ -250,7 +250,7 @@ async function checkSnail() {
 		+ "Por que devo achar que a formiga ou o caracol são diferentes de nós?\n"
 		+ "Nós talvez sejamos esses seres para o carcol. Ele vive sua vida toda enquanto acha que nós somos algo que não existe, mesmo que nossas ações se econtrem com as dele ele pode achar que é algo natural. Vai ver as coisas que julgamos como sendo naturais ou da natureza sejam causada por algo que não entendemos, que vivemos e morremos sem saber da existência.\n"
 		+ "Eu acho que é por isso que tenho receio de matar qualquer criatura viva. Já que vivemos numa vida sem aparente sentido e propósito... Que ele aproveite, sem que eu a interrompa."
-	,10);
+	,30);
 
 	await printSeparator();
 }
@@ -261,7 +261,7 @@ async function touchSnail() {
 		await showText(
 			"Tocar esse negócio estranho que o caracol virou? Não, obrigado.\n"
 			+ "Isso nem parece mais um caracol, parece que esmaguei algum animal, não que o caracol não fosse um animal."
-		,10);
+		,30);
 
 		await printSeparator();
 		return;
@@ -287,7 +287,7 @@ async function attackSnail() {
 		"Você sente uma vontade, uma coisa que você nunca sentiu antes, uma vontade subita de acabar com a vida daquele caracol insignificante.\n"
 		+ "Sua existência te irrita sem motivo aparente. Ele tenta andar mesmo sabendo que não vai a lugar nenhum. Por que ele ainda tenta? De onde vem essa vontade? Por que ele faz isso? Esse caracol é tão estúpido.\n"
 		+ "Ele vai acabar morrendo mesmo, eu posso só acabar logo com isso... "
-	,10);
+	,30);
 
 	await showText("Você se enche de vontade e esmaga o caracol inocente, que não te fez mal algum, apenas porque você pode.\n\n", 50);
 
@@ -295,7 +295,7 @@ async function attackSnail() {
 		"Quando você tira o pé e olha para o que deveria ser uma mistura de gosma e cacos da casca do que um dia foi um caracol, você na verdade vê uma poça de sangue, junto de restos que se assemelham a carne e tripas, não parece ser um caracol.\n"
 		+ "Junto desse resto misterioso, você vê uma chave que ao que indica estava dentro da concha do caracol, ou o que parecia ser um caracol.\n"
 		+ "Sua ação agora é óbvia."
-	,10);
+	,30);
 
 	snailIsSmashed = true;
 	haveKey = true; // Now the player has the haveKey
@@ -330,12 +330,12 @@ async function checkDoor() {
 		+ "Não consigo olhar pela janela da porta, está tudo escuro, parece que tem um vazio daqueles, por trás da janela, impedindo meu olhar, estou contemplando o vazio, com esperanças do vazio ser minha saída.\n"
 		+ "Isso parece o futuro, algo vazio, inexistente ainda, que só vou descobrir o que é quando eu chegar lá. Eu quero atravessar essa porta, quero saber o que tem atrás dela, é esse vazio? Ou só foi colocado aqui para que eu não saiba o que tem atrás, mas e se for uma sala escura?\n"
 		+ "Então muito provávelmente não seria a saída... Outra sala?\n"
-	,10);
+	,30);
 
 	await showText(
 		"Estou preso em algum tipo de salas infinitas que tenho que descobrir o enigma de cada para atravessa-las para que a cada porta que eu atravesse eu perca as esperanças de que a próxima será a saida e então eu comece a enlouquecer mais e mais, a cada porta que passa...\n"
 		+ "Até eu morrer ou nunca morrer, já que eu posso não sentir fome, sede ou qualquer outra necessidade fisiologica."
-	,10);
+	,30);
 	await showText("Talvez isso seja o inferno... Um julgamento, um preço a pagar pelos meus pecados, uma infinidade de salas que me fazem perder a esperança de um dia sair... Até eu beirar a sanidade... Ou talvez eu só esteja pensando demais nisso.", 30);
 
 	await printSeparator();
@@ -351,7 +351,7 @@ async function useDoor() {
 			+ "Você até tenta múltiplas vezes girar a maçaneta, como se magicamente na próxima tentativa ela fosse estar aberta.\n\n"
 			+ "\"A definição de insanidade é repitir a mesma ação múltiplas vezes esperando que o resultado será diferente.\"\n"
 			+ "Talvez você esteja perdendo a sanidade."
-		,10);
+		,30);
 		
 		await printSeparator();
 		return;

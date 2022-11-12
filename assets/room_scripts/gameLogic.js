@@ -1,5 +1,6 @@
 var showingText = false;
 var instructionsShowed = false;
+var skip = false
 
 async function showText(message, time=10) {
 	let textarea = document.getElementById("contentTextArea");
@@ -10,6 +11,15 @@ async function showText(message, time=10) {
 
 	for(let i=0; i<message.length; i++) {
 		textarea.value += message[i];
+
+		if(skip) {
+			let msg = message.slice(1, message.length);
+			textarea.value += msg;
+			skip = false;
+			showingText = false;
+			return;
+		}
+
 		textarea.scrollTop = textarea.scrollHeight; // Scrol down
 		await new Promise(r => setTimeout(r, time)); // >time<
 	}

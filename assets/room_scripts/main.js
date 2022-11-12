@@ -27,7 +27,10 @@ window.onload = () => { // Execute after HTML is loaded
 
 
 const readInput = async (prompt) => {
-	if(showingText) return document.getElementById("choiceInput").value = "";
+	if(showingText) {
+		skip = true;
+		return document.getElementById("choiceInput").value = "";	
+	}
 
 
 	if(!running) { // Game is not running
