@@ -11,7 +11,7 @@ async function showText(message, time=10) {
 	for(let i=0; i<message.length; i++) {
 		textarea.value += message[i];
 		textarea.scrollTop = textarea.scrollHeight; // Scrol down
-		await new Promise(r => setTimeout(r, time/10)); // >time<
+		await new Promise(r => setTimeout(r, time/5)); // >time<
 	}
 
 	showingText = false;
@@ -88,7 +88,8 @@ function checkAction(toCheck) {
 			/* Check */  [ "check", "andar", "aproximar", "checar", "chegar", "examinar", "ir ao", "ir ate", "ir até", "ir para", "observar", "olhar", "vasculhar", "ver" ],
 			/* Touch */  [ "touch", "descobrir", "determinar", "examinar", "mexer", "tocar" ],
 			/* Attack */ [ "attack", "acabar", "bater", "chutar", "destruir", "esmagar", "matar", "multilar", "pisar", "socar", "soco", "atacar" ],
-			/* Use */    [ "use", "abrir", "arremessar", "atravessar", "colocar", "entrar", "jogar", "pegar", "por", "segurar", "utilizar", "usar", "passar", "sair" ]
+			/* Use */    [ "use", "abrir", "arremessar", "atravessar", "colocar", "entrar", "jogar", "pegar", "por", "segurar", "utilizar", "usar", "passar", "sair" ],
+			/* Eat */    [ "eat", "comer", "botar na boca"]
 		],
 
 		[

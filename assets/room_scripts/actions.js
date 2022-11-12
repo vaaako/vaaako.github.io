@@ -303,6 +303,10 @@ async function attackSnail() {
 	await printSeparator();
 }
 
+async function eatSnail() {
+	await showText("Por que eu faria isso? Quem que come um troço desses? Frânces ok, mas por que EU faria isso? Só um idiota pra pensar uma coisa dessas.", 30);
+	await printSeparator()
+}
 
 
 // Door Actions
