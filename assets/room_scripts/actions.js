@@ -517,6 +517,6 @@ async function doLoop() {
 	snailIsSmashed = false;
 	running = true;
 
-	showStart();
+	await showStart();
 }
 
