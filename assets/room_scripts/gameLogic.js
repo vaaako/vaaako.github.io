@@ -104,7 +104,7 @@ function checkAction(toCheck) {
 
 		[
 			/* Eye */    [ "eye", "direita", "olho"  ],
-			/* Cube */   [ "cube", "asbismo", "atras", "atrás", "costas", "cubo", "escuridão", "escuro", "quadrado", "void", "preto" ],
+			/* Cube */   [ "cube", "asbismo", "atras", "atrás", "tras", "trás", "costas", "cubo", "escuridão", "escuro", "quadrado", "void", "preto" ],
 			/* Snail */  [ "snail", "animal", "caracol", "caramujo", "criatura", "esquerda", "eu", "ser", "snail", "mim" ],
 			/* Door */   [ "door", "entrada", "frente", "passagem", "saida", "saída", "porta" ],
 			/* Up */     [ "up", "acima", "cima", "lâmpada" ],
