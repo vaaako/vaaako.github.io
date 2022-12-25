@@ -25,7 +25,7 @@
 	</style>
 </head>
 <body class="box">
-	<h1>Introduction</h1>
+	<h1> Introduction </h1>
 	<i>GPG</i>, or <i>GNU Privacy Guard</i>, is a publick key cryptography implementation. This allows for the secure transmission of information between parties and can be used to verify that the origin of a message is genuine.
 
 	Usage example:
@@ -45,7 +45,7 @@
 
 
 
-	<h1>Set Up GPG Keys (Linux only)</h1>
+	<h1> Set Up GPG Keys (Linux only) </h1>
 	GPG is installed by default in most distributions.<br><br>
 
 	If for any reason GPG is not installed, on Ubuntu and Debian, you can update the local repo index and install it by typing:
@@ -62,7 +62,7 @@
 
 	To begin, you need to create a key pair, You can do this by issuing the following command:
 	<div class="code">
-		$ gpg --gen-key
+		$ gpg --full-generate-key
 	</div>
 
 	This will take you through a few questions that you configure your keys.
@@ -108,9 +108,21 @@
 
 	GPG will generate the keys using entropy. Entropy describes the amount of unpredictability and nondeterminism that exists in a system. GPG needs this entropy to generate a secure set of keys.
 
+	<h2> Get Public Key </h2>
+	You can get your <strong>Public key</strong> by the fingerprint. Use this command to see all your keys:
+	<div class="code">
+		$ gpg -K
+	</div>
+
+	Now use this command to display the <strong>Public key</strong>:
+	<div class="code">
+		$ gpg -a --export <i>fingerprint</i>
+	</div>
 
 
-	<h1>Create a Revocation Certificate</h1>
+
+
+	<h1> Create a Revocation Certificate (you can skip that) </h1>
 	You need to have a way of invalidating your key pair in case there is a security breach or in case you lose your secret key. There is an easy way of doing this with the GPG software.<br><br>
 
 	This should be done as soon as you make the key pair, not when you need it. This revocation key must be generated ahead of time and kept in a secure, separate location in case your computer is compromised or inoperable. To generate a revocation key, type:
@@ -125,7 +137,7 @@
 
 
 
-	<h1>How To Import Other Users Public Keys</h1>
+	<h1> How To Import Other Users Public Keys </h1>
 	GPG would be pretty useless if you could not accept other public keys from people you wished to communicate with.
 
 	You can import someone’s public key in a variety of ways. If you’ve obtained a public key from someone in a text file, GPG can import it with the following command:
@@ -140,7 +152,7 @@
 		$ gpg --keyserver pgp.mit.edu  --search-keys <i>search_parameters</i>
 	</div>
 
-	<h2>How To Verify and Sign Keys</h2>
+	<h2> How To Verify and Sign Keys </h2>
 	How do you know that the person giving you the public key is who they say they are? Instead of verifying the entire public keys of both parties, you can simply compare the “fingerprint” derived from these keys. This will give you a reasonable assurance that you both are using the same public key information.
 	<div class="code">
 		$ gpg --fingerprint <i>your_email@address.com</i>
@@ -148,7 +160,7 @@
 
 	This will produce a much more manageable string of numbers to compare. You can compare this string with the person themselves, or with someone else who has access to that person.
 
-	<h2>Sign Their Key</h2>
+	<h2> Sign Their Key </h2>
 	Signing a key tells your software that you trust the key that you have been provided with and that you have verified that it is associated with the person in question.
 	<div class="code">
 		$ gpg --sign-key <i>email@example.com</i>
@@ -164,7 +176,7 @@
 		$ gpg --import ~/<i>signed.key</i>
 	</div>
 
-	<h2>Making and verifying signatures</h2>
+	<h2> Making and verifying signatures </h2>
 	A digital signature certifies and timestamps a document. If the document is subsequently modified in any way, a verification of the signature will fail. A digital signature can serve the same purpose as a hand-written signature with the additional benefit of being tamper-resistant. The GnuPG source distribution, for example, is signed so that users can verify that the source code has not been modified since it was packaged.<br><br>
 
 	The command-line option <strong>--sign</strong> is used to make a digital signature. The document to sign is input, and the signed document is output.
@@ -208,7 +220,7 @@
 	</div>
 
 
-	<h1>How To Make Your Public Key Highly Available</h1>
+	<h1> How To Make Your Public Key Highly Available </h1>
 	Because of the way that public key encryption is designed, there is not anything malicious that can happen if unknown people have your public key.<br><br>
 
 	With this in mind, it may be beneficial to make your public key publicly available. People can then find your information to send you messages securely from your very first interaction.<br><br>
@@ -236,8 +248,8 @@
 
 	The key will be uploaded to the specified server. Afterwards, it will likely be distributed to other key servers around the world.
 
-	<h1>Encrypt and Decrypt Messages with GPG</h1>
-	<h2>Encrypt</h2>
+	<h1> Encrypt and Decrypt Messages with GPG </h1>
+	<h2> Encrypt </h2>
 	<div class="code">
 		$ gpg --encrypt --sign --armor -r <i>person@email.com</i> <i>name_of_file</i>
 	</div>
@@ -248,14 +260,14 @@
 
 	So if it was only encrypted with the other party’s public key, you would not be able to view the message again, unless you somehow obtained their private key. Adding yourself as a second recipient encrypts the message two separate times, one for each recipient.
 
-	<h2>Decrypt</h2>
+	<h2> Decrypt </h2>
 	<div class="code">
 		$ gpg <i>file_name</i>.asc
 	</div>
 
 	If instead of a file, you have the message as a raw text stream, you can copy and paste it after typing <strong>gpg</strong> without any arguments. You can press "CTRL-D" to signify the end of the message and GPG will decrypt it for you.
 
-	<h1>Key Maintenance</h1>
+	<h1> Key Maintenance </h1>
 	There are a number of procedures that you may need to use on a regular basis to manage your key database.<br><br>
 
 	To list your available GPG keys that you have from other people, you can issue this command:
