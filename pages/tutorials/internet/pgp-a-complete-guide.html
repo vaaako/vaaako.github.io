@@ -44,6 +44,7 @@
 	</ul>
 
 
+
 	<h1>Set Up GPG Keys (Linux only)</h1>
 	GPG is installed by default in most distributions.<br><br>
 
@@ -97,7 +98,7 @@
 		</li>
 
 		<li>
-			<i>Change (N)ame, ©omment, (E)mail or (O)kay/(Q)uit?</i> <strong>O</strong>
+			<i>Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?</i> <strong>O</strong>
 		</li>
 
 		<li>
@@ -108,7 +109,8 @@
 	GPG will generate the keys using entropy. Entropy describes the amount of unpredictability and nondeterminism that exists in a system. GPG needs this entropy to generate a secure set of keys.
 
 
-<!-- 	<h1>Create a Revocation Certificate</h1>
+
+	<h1>Create a Revocation Certificate</h1>
 	You need to have a way of invalidating your key pair in case there is a security breach or in case you lose your secret key. There is an easy way of doing this with the GPG software.<br><br>
 
 	This should be done as soon as you make the key pair, not when you need it. This revocation key must be generated ahead of time and kept in a secure, separate location in case your computer is compromised or inoperable. To generate a revocation key, type:
@@ -119,7 +121,9 @@
 	You should immediately restrict the permissions on the generated certificate file in order to prevent unauthorized access:
 	<div class="code">
 		$ chmod 600 ~/<i>revocation.crt</i>
-	</div> -->
+	</div>
+
+
 
 	<h1>How To Import Other Users Public Keys</h1>
 	GPG would be pretty useless if you could not accept other public keys from people you wished to communicate with.
@@ -144,7 +148,7 @@
 
 	This will produce a much more manageable string of numbers to compare. You can compare this string with the person themselves, or with someone else who has access to that person.
 
-	<h1>Sign Their Key</h1>
+	<h2>Sign Their Key</h2>
 	Signing a key tells your software that you trust the key that you have been provided with and that you have verified that it is associated with the person in question.
 	<div class="code">
 		$ gpg --sign-key <i>email@example.com</i>
@@ -158,6 +162,49 @@
 	When they receive this new, signed key, they can import it, adding the signing information you’ve generated into their GPG database. They can do this by typing:
 	<div class="code">
 		$ gpg --import ~/<i>signed.key</i>
+	</div>
+
+	<h2>Making and verifying signatures</h2>
+	A digital signature certifies and timestamps a document. If the document is subsequently modified in any way, a verification of the signature will fail. A digital signature can serve the same purpose as a hand-written signature with the additional benefit of being tamper-resistant. The GnuPG source distribution, for example, is signed so that users can verify that the source code has not been modified since it was packaged.<br><br>
+
+	The command-line option <strong>--sign</strong> is used to make a digital signature. The document to sign is input, and the signed document is output.
+	<div class="code">
+		$ gpg --output <i>output_file_name</i> --sign <i>file_to_be_signed</i>
+	</div>
+
+	 The document is compressed before signed, and the output is in binary format.<br><br>
+
+	 Given a signed document, you can either check the signature or check the signature and recover the original document.<br><br>
+
+	 To check the signature use the <strong>--verify</strong> option. To verify the signature and extract the document use the <strong>--decrypt</strong> option. The signed document to verify and recover is input and the recovered document is output.
+
+ 	<div class="code">
+		$ gpg --output <i>output_file_name</i> --decrypt <i>file_with_signature</i>
+	</div>
+
+	<h2> Clearsigned documents </h2>
+	A common use of digital signatures is to sign usenet postings or email messages.<br><br>
+
+	In such situations it is undesirable to compress the document while signing it. The option <strong>--clearsign</strong> causes the document to be wrapped in an ASCII-armored signature but otherwise does not modify the document.
+
+ 	<div class="code">
+		$ gpg --clearsign <i>file_name</i>
+	</div>
+
+	<h2> Deatached signatures </h2>
+	A signed document has limited usefulness. Other users must recover the original document from the signed version, and even with clearsigned documents, the signed document must be edited to recover the original.<b><br>
+
+	Therefore, there is a third method for signing a document that creates a detached signature.<br><br>
+
+	A detached signature is created using the --detach-sig option.
+ 	<div class="code">
+		$ gpg --output <i>output_file_name</i> --detach-sig <i>file_name</i>
+
+	</div>
+
+	Both the document and detached signature are needed to verify the signature. The <strong>--verify</strong> option can be to check the signature.
+ 	<div class="code">
+		$ gpg --verify <i>file_with_signature</i> <i>original_file_name</i>
 	</div>
 
 
