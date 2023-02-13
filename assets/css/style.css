@@ -16,4 +16,6 @@ body {
 	margin: 20px auto; /* Center using margin left and right auto*/
 }
 
-
+ul li {
+	text-align: left;
+}
