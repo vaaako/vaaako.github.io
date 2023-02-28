@@ -3,17 +3,21 @@ body {
 }
 
 .box {
-	width: 350px;
+/*	width: 350px;*/
+	width: 30%;
 	height: auto;
 
 	text-align: center;
 	border: 2px solid;
-	/*background: #369;*/
-	/*border-radius: 25px;*/
+/*	border-radius: 25px;*/
 
-	/* Magin */
+/*	align-items: center;
+	justify-content: center;
+
+*/	/* Magin */
 	padding: 20px;
-	margin: 20px auto; /* Center using margin left and right auto*/
+	margin: 20px auto; /* Center using margin left and right auto */
+
 }
 
 ul li {
