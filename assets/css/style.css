@@ -1,5 +1,7 @@
 body {
 	font-family: Arial;
+	background-color: black;
+	color: white;
 }
 
 .box {
@@ -9,6 +11,7 @@ body {
 
 	text-align: center;
 	border: 2px solid;
+	border-color: white;
 /*	border-radius: 25px;*/
 
 /*	align-items: center;
