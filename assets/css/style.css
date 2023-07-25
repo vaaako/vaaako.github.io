@@ -4,16 +4,6 @@ body {
 	color: black;
 }
 
-a {
-	text-decoration: none;
-	color: blue;
-}
-
-p {
-/*	margin-top: -17px;
-	margin-bottom: 10px;
-*/}
-
 #centered-box {
 	width: 30%;
 /*	max-width: 800px;*/
@@ -40,6 +30,10 @@ p {
   }
 }
 
+a {
+	text-decoration: none;
+	color: blue;
+}
 
 ul li {
 	text-align: left;

@@ -1,8 +1,16 @@
-// const ROOT = '/';
-const ROOT = '/Fernanda'; // Github pages
+const ROOT = '/';
+// const ROOT = '/Fernanda'; // Github pages
 var CONVERTER;
 
-// Add default header
+function loadShowdown(callback) {	
+	// Add Showdown to header (add like above doesn't work)	
+	let script = document.createElement('script');
+	script.src = 'https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js';
+	script.onload = callback;
+	let link = document.getElementsByTagName('link')[0];
+	link.parentNode.insertBefore(script, link.nextSibling);
+}
+
 async function addDefaultHeader(title='Fernanda', pMargin=-15) {
 	title = (title) ? 'Fernanda | '+title : title;
 
@@ -12,7 +20,7 @@ async function addDefaultHeader(title='Fernanda', pMargin=-15) {
 
 	<title>${title}</title>
 
-	<link rel="stylesheet" type="text/css" href="${(ROOT!='/') ? ROOT + '/' : ROOT}assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="${(ROOT=='/') ? ROOT : ROOT + '/'}assets/css/style.css"/>
 
 	<style type="text/css">
 		p {
@@ -25,17 +33,6 @@ async function addDefaultHeader(title='Fernanda', pMargin=-15) {
 
 	// Add header
 	document.getElementsByTagName('head')[0].insertAdjacentHTML('afterbegin', header);
-
-
-	// Add Showdown to header (add like above doesn't work)
-	let script = document.createElement('script');
-	script.src = 'https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js'; // Check https://jquery.com/ for the current version	
-
-	// Add after link tag
-	let link = document.getElementsByTagName('link')[0];
-	link.parentNode.insertBefore(script, link.nextSibling);
-	// document.getElementsByTagName('head')[0].appendChild(script);
-
 	console.log("Loaded Header!");
 }
 
@@ -46,7 +43,7 @@ async function addDefaultFooter(back, onlyFooter=false, appendToBeggining=false)
 	if(back=='/') {
 		back = ROOT;
 	} else if(!back){
-		back = ROOT + '/pages/hall';
+		back = (ROOT=='/') ? ROOT + 'pages/hall' : ROOT + '/pages/hall';
 	}
 
 	let footer = `
@@ -76,6 +73,8 @@ async function addDefaultFooter(back, onlyFooter=false, appendToBeggining=false)
 
 
 async function getMarkdown(markdown, file=true, openLinksInNewWindow=true) { // For some reason without file doens't work (???)
+	console.log('Loading markdown!');
+
 	if(file) {
 		let res = await fetch(markdown);
 		markdown = await res.text();
@@ -92,8 +91,10 @@ async function getMarkdown(markdown, file=true, openLinksInNewWindow=true) { // 
 
 async function addDefaultPage(config) {
 	// headerTitle, back, onlyFooter, appendToBeggining, markdown, file
+	await addDefaultHeader(config.headerTitle, config.pMargin);
+	await addDefaultFooter(config.back, config.onlyFooter, config.appendToBeggining);
 
-	await addDefaultHeader(config.headerTitle, config.pMargin)
-		.then(() => addDefaultFooter(config.back, config.onlyFooter, config.appendToBeggining))
-		.then(() => getMarkdown(config.markdown, config.file, config.openLinksInNewWindow))
+	// Can get error if showdown doens't fully loads
+	loadShowdown(() => getMarkdown(config.markdown, config.file, config.openLinksInNewWindow));
+	// await getMarkdown(config.markdown, config.file, config.openLinksInNewWindow);
 }

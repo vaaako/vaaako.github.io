@@ -36,7 +36,7 @@ Minhas reviews sobre coisas, a maioria estão em TXT normal, mas se quer reviews
 ### Internet/Technology
 
 [Como Ficar Anônimo na Internet](tutorials/internet/notme/como-ficar-anonimo-na-internet.txt) 
- • [Como Minerar Bitcoin](tutorials/internet/notmec/omo-minerar-bitcoin.txt) • [Escolher o Melhor Sistema Operacional *(Diolinux)*](tutorials/internet/escolher-o-melhor-sistema-operacional.ods)
+ • [Como Minerar Bitcoin](tutorials/internet/notme/omo-minerar-bitcoin.txt) • [Escolher o Melhor Sistema Operacional *(Diolinux)*](tutorials/internet/escolher-o-melhor-sistema-operacional.ods)
  • [How to Sell Drugs Online](tutorials/internet/notme/htsdo)
  • [Tor Browser Segurança](tutorials/internet/notme/torbrowser.pdf)
 

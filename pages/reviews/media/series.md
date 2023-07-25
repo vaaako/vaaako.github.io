@@ -27,5 +27,5 @@ Garota de Fora é uma série Tailândesa de baixo orçamento (acho que posso cha
 **Nota: 4.5/10**
 
 # Velma
-Você pode encontrar minha review de velma aqui: [Review da Velma](velma.html)<br>
+Você pode encontrar minha review de velma aqui: [Review da Velma](velma)<br>
 **Nota: 1/10**

@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>404</title>
-
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"> <!-- Doesn't work -->
+	<style type="text/css">
+		body { font-family: Arial; background-color: white; color: black; }
+		#centered-box { width: 30%; height: auto; text-align: center; border: 2px solid; border-color: black; padding-top: 20px; padding-inline: 20px; margin: 20px auto 0; }
+		#centered-box footer { margin: 20px auto; }
+		@media (max-width: 767px) { #centered-box { width: 80%; } }
+		a { text-decoration: none; color: blue; }
+	</style>
 </head>
-<body>
-	<div id="centered-box">
-		<h1>404</h1>
-		<p>
-			Ops! Parece que você acabou indo pra onde não devia, ou devia... não sei
-		</p>
-
-		<hr>
-		<footer>
-			<a href="./index.html">Back</a>
-		</footer>
+<body>	
+	<div id='centered-box'>
+	<h1> 404 </h1> <p>Ops! Parece que você acabou indo pra onde não devia<br> ou devia... não sei</p>
+	<footer><a href="/">Back</a></footer> <!-- If github pages should be "directory/"
 	</div>
 </body>
 </html>
