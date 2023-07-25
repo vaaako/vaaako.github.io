@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../assets/scripts/defaultPage.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		(async () => { // Add default first then hall content
+			await addDefaultPage({
+				'headerTitle': 'About',
+				'back': 'hall',
+				'markdown': 'tho.md',
+				// 'file': true
+			});
+		})();
+	</script>
+</body>
+</html>

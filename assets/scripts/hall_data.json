@@ -1,0 +1,163 @@
+[
+  {
+    "category": "Reviews",
+    "description": "Minhas reviews sobre coisas, a maioria estão em TXT normal, mas se quer reviews sobre coisas aleatórias, aqui é o lugar certo",
+    "subCategories": [
+      {
+        "name": "Games",
+        "items": [
+          {
+            "name": "Castlevania",
+            "link": "./reviews/games/castlevania.txt"
+          }
+        ]
+      },
+      {
+        "name": "Movies/Series",
+        "items": [
+          {
+            "name": "Filmes",
+            "link": "./reviews/media/filmes.html"
+          },
+          {
+            "name": "Séries",
+            "link": "./reviews/media/series.html"
+          },
+          {
+            "name": "Velma",
+            "link": "./reviews/media/velma.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Tutorial *(By me)*",
+    "description": "Essas páginas foram majoritariamente feitas originalmente em <code>Markdown</code> e convertidos para `HTML` por isso podem estar tão diferentes do resto do site",
+    "subCategories": [
+      {
+        "name": "Internet/Technology",
+        "items": [
+          {
+            "name": "Apache Tutorial",
+            "link": "https://github.com/vaaako/Apache-Tutorial"
+          },
+          {
+            "name": "Nginx Tutorial",
+            "link": "https://github.com/vaaako/Nginx-Tutorial"
+          },
+          {
+            "name": "Pentest",
+            "link": "https://github.com/vaaako/Hack"
+          },
+          {
+            "name": "Hidden Service *(.onion website)*",
+            "link": "https://github.com/vaaako/Hidden-Service"
+          },
+          {
+            "name": "PGP a Basic Guide",
+            "link": "./tutorials/internet/pgp-a-basic-guide.html"
+          }
+        ]
+      },
+      {
+        "name": "Games",
+        "items": [
+          {
+            "name": "Graphwar Tutorial",
+            "link": "#"
+          },
+          {
+            "name": "Love2D Tutorial *(Unfinished)*",
+            "link": "https://github.com/vaaako/Love2D-Tutorial"
+          }
+        ]
+      },
+      {
+        "name": "Outro",
+        "items": [
+          {
+            "name": "Como lidar com o cadáver do seu amigo",
+            "link": "./tutorials/outro/cadaver.txt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Tutorial *(By outras pessoas)*",
+    "description": "Essas páginas foram majoritariamente feitas originalmente em `Markdown` e convertidos para `HTML` por isso podem estar tão diferentes do resto do site",
+    "subCategories": [
+      {
+        "name": "Internet/Technology",
+        "items": [
+          {
+            "name": "Como Ficar Anônimo na Internet",
+            "link": "./tutorials/internet/como-ficar-anonimo-na-internet.txt"
+          },
+          {
+            "name": "Como Minerar Bitcoin",
+            "link": "./tutorials/internet/como-minerar-bitcoin.txt"
+          },
+          {
+            "name": "Escolher o Melhor sistema Operacional",
+            "link": "./tutorials/internet/escolher-o-melhor-sistema-operacional.ods"
+          },
+          {
+            "name": "How to Sell Drugs Online",
+            "link": "./tutorials/internet/howtoselldrugsonlinelollmao.html"
+          },
+          {
+            "name": "Tor Browser (Você não está seguro)",
+            "link": "./tutorials/internet/torbrowser.pdf"
+          }
+        ]
+      },
+      {
+        "name": "Games",
+        "items": [
+          {
+            "name": "Aulão de Magic do Patrux",
+            "link": "./tutorials/games/Aulao_de_Magic.ppt"
+          }
+        ]
+      },
+      {
+        "name": "Outro",
+        "items": [
+          {
+            "name": "Como induzir paralisia do Sonos",
+            "link": "./tutorials/outro/paralisia-do-sono.txt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Specials",
+    "description": "Páginas que não sei como categorizar",
+    "subCategories": [
+      {
+        "name": "",
+        "items": [
+          {
+            "name": "Iceberg Gosto Musicais *(Desatualizado)*",
+            "link": "./specials/iceberg-musicas"
+          },
+          {
+            "name": "Random",
+            "link": "./specials/random"
+          },
+          {
+            "name": "Leitura",
+            "link": "./specials/leitura"
+          },
+          {
+            "name": "Room",
+            "link": "./specials/room"
+          }
+        ]
+      }
+    ]
+  }
+]

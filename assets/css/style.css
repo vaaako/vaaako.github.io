@@ -1,0 +1,46 @@
+body {
+	font-family: Arial;
+	background-color: white;
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+p {
+/*	margin-top: -17px;
+	margin-bottom: 10px;
+*/}
+
+#centered-box {
+	width: 30%;
+/*	max-width: 800px;*/
+	height: auto;
+
+	text-align: center;
+	border: 2px solid;
+	border-color: black;
+
+	/* Centralizar horizontalmente usando margin left e right auto */
+	padding-top: 20px;
+	padding-inline: 20px;
+	margin: 20px auto 0;
+}
+
+#centered-box footer {
+	margin: 20px auto;
+}
+
+/* Estilo responsivo para celular */
+@media (max-width: 767px) { /* aplicar algumas alterações quando a largura da tela for menor ou igual a 767px */
+	#centered-box {
+		width: 80%; /* Aumenta largura para ficar melhor no celular */
+  }
+}
+
+
+ul li {
+	text-align: left;
+}

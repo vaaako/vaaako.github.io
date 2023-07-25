@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+	<script type="text/javascript" src="../assets/scripts/defaultPage.js"></script>
+</head>
+<body>
+
+	<div id="centered-box">
+		<p style="margin-top: 99999px; margin-inline: 20px;">
+			Ah sim, você quer saber o porquê do nome ser "Fernanda"? Bem é porque ██ ████ ███ █████ ████ █ ██ ████
+		</p>
+	</div>
+
+
+
+	<script type="text/javascript">
+		let text = `
+# About
+<a href="aboutme">About me</a>
+<hr>
+
+Já faz algum tempo que pretendo criar um site do jeito mais simples possível,
+ apenas servindo para eu colocar pensamentos. Sendo assim, um site, acho eu,
+ é melhor forma de fazer essa ideia
+
+Não fiz esse site como um blog, onde as pessoas entram aqui pra ver as baboseiras
+ que posto, o objetivo desse site é: Eu coloco as coisas aqui para mim mesma, mas
+  se alguém quiser ver também... Legal :D
+
+Aqui também não é onde eu vou ligar pra se as coisas estão pontuadas ou escritas
+ certinho, as vezes vão estar e as vezes não, depende do meu dia
+
+Aqui é meu cantinho, o lugar pra eu ser eu mesma, onde eu faço as coisas do meu jeito
+
+Caso seja de seu interesse, aqui vão alguns motivos desse site não usar quase nada
+ de CSS (ou seja, porque ele é feio):
+- Eu pessoalmente desse design minimalista
+- Não gosto nem um pouco de frontend
+
+
+Nesse site estou usando uma lib chamada <a href="https://github.com/showdownjs/showdown" target="_blank">\`Showdown\`</a>,
+ que converte \`Markdown\` para \`HTML\`, não que eu não saiba escrever \`HTML\`, até porque é bem simples,
+ mas eu gosto mais de escrever em \`Markdown\` e é menos confuso de ler
+
+O lado negativo de fazer desse jeito é que a página demora um pouco mais pra carregar, porém,
+ essa demora seria diminuida drásticamente se eu colocasse o \`Markdown\` direto no código, invés de ter que fazer um \`Fetch\
+ no arquivo e pegar o conteúdo, deu pra entender?
+ Mas desse jeito fica muito melhor pra aplicar mudanças.
+ Isso é quase como se eu tivesse feito minha própria framework?
+
+Caso queira ver o código, você pode entrar no meu <a href="https://github.com/vaaako/Fernanda" target="_blank">github</a>
+
+<br>
+Obs.: Eu geralmente escrevo em inglês por costume<br>
+Eu imagino que as coisas que eu escrevo podem ser uteis pra alguém, então escrevo na "língua mundial"
+`;
+
+
+		(async () => {
+			await addDefaultPage({
+				'headerTitle': 'About',
+				'pMargin': 0,
+
+				'back': '/',
+				'onlyFooter': true,
+				'appendToBeggining': true,
+
+				'markdown': text,
+				'file': false
+			});
+		})();
+	</script>
+</body>
+</html>

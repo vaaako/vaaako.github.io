@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<!--
+Alice estava começando a se cansar de ficar ali sentada ao lado da irmã no barranco e não ter nada que fazer: uma ou duas vezes espiara o livro que sua irmã estava lendo, mas não tinha figuras nem diálogos, “e para que serve um livro”, pensou Alice, “sem figuras nem diálogos?” Assim, meditava com seus botões (tanto quanto podia, porque o calor aquele dia era tal que ela se sentia sonolenta e entorpecida) se o prazer de fazer uma guirlanda de margaridas valeria o esforço de levantar-se e colher as margaridas, quando de repente um coelho branco com olhos rosados passou correndo perto dela.
+-->
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fernanda | Speed Reading</title>
+</head>
+
+<style type="text/css">
+	body {
+		font-family: Arial;
+	}
+
+	textarea {
+		width: 400px;
+		height: 200px;
+		resize: unset;
+	}
+
+	.tab {
+		width: auto;
+		height: auto;
+
+		position: absolute;
+		display: none;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+</style>
+
+<script>
+	function switchTab(tabID) {
+		var i, tab;
+		tab = document.getElementsByClassName("tab");
+		for (i = 0; i < tab.length; i++) {
+			tab[i].style.display = "none";
+		};
+		document.getElementById(tabID).style.display = "block";
+	};
+
+
+
+	function isNumber(evt) { // Check if WPS is number
+		evt = (evt) ? evt : window.event;
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if(charCode > 31 && (charCode < 48 || charCode > 57)) {
+			return false;
+		}
+		return true;
+	}
+
+	// Default values
+	var lastIndex = 0;
+	var state = "Idle"; // Better option then true and false
+
+	// Pause function
+	function pause() {
+		if(state=="Reset") { 
+			return showText();
+
+		} else if(state!="Paused") {
+			console.log("Paused!");
+			state="Paused"
+			return;
+			// document.getElementById("toShow").innerHTML = "Paused!";;
+		} else {
+			console.log("Unpaused!");
+			return showText();
+		}
+	}
+
+
+	function restart() {
+		console.log("Reseting!");
+		return state="Reset";
+	}
+
+	// Main function
+	async function showText() {
+		console.log("Starting!");
+
+		if(state=="Running")
+			return console.log("Already running");
+		state="Running" // Reset
+
+
+		let text = (document.getElementById("textArea").value).replace(/\s+/g,' ').trim().split(" "); // Remove extra blank spaces
+		const WPS = parseInt(document.getElementById("WPS").value) || 4; // 350 -> default
+
+		for(lastIndex; lastIndex<text.length; lastIndex++) {
+			console.log(lastIndex);
+			document.getElementById("toShow").innerHTML = text[lastIndex];
+			await new Promise(r => setTimeout(r, (1000/WPS))); // WPS
+
+			if(state=="Paused") // Pause
+				return;
+
+			if(state=="Reset") {
+				lastIndex=-1;
+				state="Running";
+			}
+		}
+		lastIndex=0;
+		return alert("Finished!"); 
+	}
+</script>
+
+<body>
+	<p>AVISO: Página muito antiga feita quando eu ainda não sabia programar ainda, não sei porquê resolvi por aqui</p><br><br><br>
+
+
+	<div id="Caixinha" class="tab" style="display:block">
+		<h3>Text: </h3>
+		<textarea id="textArea"></textarea><br>
+		<button type="button" onclick="switchTab('Main'); showText();">Start</button>
+
+		<h3>WPS: </h3>
+		<input type="input" id="WPS" maxlength="2" placeholder="4" onkeypress="return isNumber(event)">
+	</div>
+
+	<div id="Main" class="tab">
+		<h1 id="toShow">Texto de exemplo</h1>
+
+		<br><br>
+		<button type="button" style="text-align: center;" onclick="pause();">Pause</button>
+		<button type="button" style="text-align: center;" onclick="restart();">Restart</button>
+		<button type="button" style="text-align: center;" onclick="window.location.reload();">Back</button>
+	</div>
+
+</body>
+
+</html>

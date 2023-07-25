@@ -1,0 +1,13 @@
+ErrorDocument 404 /404.html
+
+# Remove .html from URL 'https://example.com/page.html' to 'https://example.com/page'
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ /$1 [L,R=301]
+
+
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Type: text/html; charset=utf-8
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+	<script type="text/javascript" src="../assets/scripts/defaultPage.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+		let text = `
+# About me
+<hr>
+
+Eu sou o/a vako<br>
+Esse é meu site
+
+Nessa página eu vou te contar um pouquinho de mim
+
+Eu sou eu, só fiz esse site porque gosto de anotar as coisas que sei,
+ tenho medo de algum dia de repente esquecer algo de importante que penso ou sei,
+ como uma amnsesia repentina, por isso sempre escrevo e catalogo algumas coisas que sei,
+ também porque pode ser útil pra alguém.
+ Eu também gosto de escrever coisas pra mim mesma, então cá estamos.
+
+Não estou escrevendo essas coisas para alguém ver (só os tutoriais),
+ escrevo apenas como uma terapia ou algo assim, gosto de escrever coisas como se alguém fossem lê-las,
+ também de escrever para mim.
+
+Eu já tentei criar um site nesse estilo algumas vezes, mas sempre acaba comigo usando
+ \`Flask\` pra fazer alguma coisa mais complexa do que queria no inicio *(como da vez que clonei o twitter)*,
+ desssa vez vou tentar usar apenas \`HTML\`, \`CSS\` e \`Javascript\`
+ *(Embora meus conhecimentos pra web não sejam tão vastos, na verdade não são vastos pra nada)*,
+ eu não gosto de programação frontend, mas vida que segue.
+
+De mais, não sei o que escrever sobre mim, não quero me expor tanto *(irônico não?)*
+ e também tem muito pra você descobrir sobre mim aqui mesmo!
+	`;
+
+		(async () => { // Add default first then hall content
+			await addDefaultPage({
+				'headerTitle': 'About Me',
+				'pMargin': 0,
+
+				'back': 'about',
+				// 'onlyFooter': true,
+				// 'appendToBeggining': true,
+
+				'markdown': text,
+				'file': false
+			});
+		})();
+	</script>
+
+
+</body>
+</html>

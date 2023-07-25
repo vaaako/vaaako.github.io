@@ -1,0 +1,39 @@
+Olá amigo! Se você esta aqui é porque quer minerar Bitcoins.
+Minerar Bitcoins é algo simples e com o nosso script! Tornamos o mais simples possível para o publico mais leigo.
+Então vamos lá! Para começar a minerar é simples, primeiro vou destacar alguns requisitos!
+ 
+*Voce precisa de um Servidor(VPS)*
+*Apenas sistema operacional Ubuntu e Debian para rodar o script de mineração*
+*Tenha uma carteira de Bitcoins, você pode estar adquirindo uma nas seguintes empresas, Xapo, Mercadobitcoins.
+Aqui está um Exemplo dessa carteira > 3Nj5pS3XgvMwLuwyodjK9DK6ufNc6DMd33 (Você ira receber os pagamentos nessa carteira)*
+*O script trabalha com núcleo, então quanto mais núcleo no processador, mais rapido a mineração*
+ 
+PARA COMEÇAR, APENAS DIGITE OS COMANDOS A BAIXO.
+ 
+1º COMANDO!
+wget https://raw.githubusercontent.com/lumastico/minerar.sh/master/niferbtc.sh
+ 
+2º COMANDO!
+chmod 777 *
+ 
+3º COMANDO!
+sh niferbtc.sh <suacarteira>
+ 
+Exemplo ----- >   sh niferbtc.sh 3TesteTesteBTCTesteBTC
+ 
+A SEGUIR IRA BAIXAR OS ARQUIVOS E CONFIGURAR O SCRIPT AUTOMATICAMENTE.
+APÓS MOSTRAR NA TELA A MENSAGEM 'INICIANDO MINERAÇÃO' JÁ PODE FECHAR O CONSOLE, POIS IRA FICAR MINERANDO 24 HORAS AUTOMATICAMENTE,
+SEM PRECISAR ESTA DEIXANDO SEU CONSOLE ABERTO.
+ 
+PARA ACOMPANHAR SUA MINERAÇÃO DE BITCOINS, VOCÊ DEVE ENTRAR NESSE SITE: http://www.zpool.ca/?address=<suacarteira>
+ 
+Exemplo >
+http://www.zpool.ca/?address=3TesteTesteBTCTesteBTC
+ 
+LA VOCÊ TERÁ GRÁFICOS, QUANTOS SERVIDORES(VPS) ESTÃO MINERANDO NA SUA CARTEIRA, SUA VELOCIDADE, ENTRE OUTRAS COISAS.
+ 
+---====== PERGUNTAS ======---
+ 
+Como irei receber meu dinheiro?
+ 
+"QUANDO VOCÊ CHEGAR A VALORES ACIMA DE 0,0015 BTC, IRA SER ENVIADO PARA SUA CARTEIRA DE BITCOINS, NOS DOMINGOS. E OS VALORES A CIMA DE 0.015 SERA ENVIADO A CADA 4 HORAS, NO PRIMEIRO PAGAMENTO DEMORA ATÉ 24 HORAS, ENTÃO SÓ AGUARDA!"

@@ -1,0 +1,38 @@
+== O QUE É ==
+Room é um text adventure criado por mim, dá para se dizer que é um livro interativo, já que 90% do jogo é texto, meus pensamentos que resolvi expressar por meio de um text adventure.
+
+=== TUTORIAL BÁSICO ===
+Bem vindo(a) ao Room
+Vou te explicar brevente as regras do jogo.
+Room é um text adventure, isso significa que todas as ações serão por texto, use sua imaginação.
+Funcionará assim: Eu, o narrador, explicarei sua situação e ao final você decidirá qual ação deseja tomar.
+Digite palavras como: "Ir para", "Tocar no" etc.
+
+Exemplo:
+Você está de frente para uma criatura que acabou de te fazer questionar sua existência, o que deseja fazer?
+[ > ] Quero esmagar a formiga
+
+Resumindo: Seja objetivo para que suas ações sejam bem interpretadas, tente usar "Verbo" + "adjetivo"
+Dica: Cheque/olhe o objeto antes de interagir com ele
+Recomendo jogar de uma vez só, tendo em vista que não tem função de salvar progresso.
+USE VERBOS NO INFINITIVO. Exemplo: "bato" vira "bater"
+Lembre-se de escrever apenas UMA ação por vez e de que você pode e deve sempre olhar em volta. Bom jogo.
+
+O jogo possui 4 finais, sendo apenas um o verdadeiro.
+
+> (Qualquer erro de português é a sua sanidade que está baixa e você já não está conseguindo pensar direito) <
+
+==== RECOMENDAÇÕES ===
+Jogue de noite, quando esitver sozinho escutando o álbum Whitedeath do Father2006 (Ou alguma música ambiente, como o Álbum Phaedra ou Rubycon do Tangerine Dream), para imersão completa.
+Youtube: https://www.youtube.com/watch?v=EgrZuUmLMk0
+Spotify: https://open.spotify.com/album/78aJSIBt2cmB75Z2Tl6HvS
+
+Não dê reload/F5 nem saia do jogo, seu progresso não é salvo
+Sejá paciente em algumas partes, embora algumas partes possam parecer um texto aleatório se repetindo infinitamente, ou alguma pausa que parece que nunca vai ter fim, basta esperar por alguns instantes que o jogo vai continuar
+
+== CRÉDITO ==
+Dev: Vako
+Poster: Arzt
+
+Código original (java): https://github.com/vaaako/Room
+Código original (HTML, CSS, JS): https://github.com/vaaako/RoomHTML

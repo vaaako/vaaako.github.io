@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../assets/scripts/defaultPage.js"></script>
+	<style type="text/css">
+		#hall {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		h1 {
+			padding-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		(async () => { // Add default first then hall content
+			await addDefaultPage({
+				'headerTitle': 'Hall',
+				// 'pMargin': -15,
+
+				'back': '/',
+				// 'onlyFooter': true,
+				// 'appendToBeggining': true,
+
+				'markdown': 'hall.md',
+				// 'file': true
+			});
+		})();
+	</script>
+</body>
+</html>
