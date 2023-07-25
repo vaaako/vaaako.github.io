@@ -1,5 +1,5 @@
-const ROOT = '/';
-// const ROOT = 'Fernanda/'; // Github pages
+// const ROOT = '/';
+const ROOT = '/Fernanda'; // Github pages
 var CONVERTER;
 
 // Add default header
@@ -12,7 +12,7 @@ async function addDefaultHeader(title='Fernanda', pMargin=-15) {
 
 	<title>${title}</title>
 
-	<link rel="stylesheet" type="text/css" href="${ROOT}assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="${(ROOT!='/') ? ROOT + '/' : ROOT}assets/css/style.css"/>
 
 	<style type="text/css">
 		p {
@@ -46,7 +46,7 @@ async function addDefaultFooter(back, onlyFooter=false, appendToBeggining=false)
 	if(back=='/') {
 		back = ROOT;
 	} else if(!back){
-		back = ROOT + 'pages/hall';
+		back = ROOT + '/pages/hall';
 	}
 
 	let footer = `
