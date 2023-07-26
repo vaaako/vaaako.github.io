@@ -8,7 +8,7 @@
 Minhas reviews sobre coisas, a maioria estão em TXT normal, mas se quer reviews sobre coisas aleatórias, aqui é o lugar certo
 
 ## Games
-[Castlevania](reviews/games/castlevania.txt')
+[Castlevania](reviews/games/castlevania.txt)
 
 ## Movies/Series
 [Filmes](reviews/media/filmes) • [Series](reviews/media/series)

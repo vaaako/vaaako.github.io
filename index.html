@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--
+		TODO:
+			- Make some script to add this
+				* because of Title, Description and Image that i may want to change later
+	-->
+	<!-- Embed Start -->
+	<meta name="title" content="Fernanda" />
+	<meta name="description" content="Fernanda's website where... have... things..." />
 
-	<title>Fernanda</title>
-	
-	<!-- Discord Embed -->
-	<meta content="Fernanda" property="og:title" />
-	<meta content="Fernanda's Website" property="og:description" />
-	<meta content="https://vaaako.github.io/Fernanda" property="og:url" />
-	<meta content="assets/images/fernanda-v2.png" property="og:image" />
-	<meta content="#CA1773" data-react-helmet="true" name="theme-color" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vaaako.github.io/Fernanda" />
+	<meta property="og:title" content="Fernanda" />
+	<meta property="og:description" content="Fernanda's website where... have... things..." />
+	<meta property="og:image" content="https://i.imgur.com/ek0GeWg.png" />
+
+	<meta data-react-helmet="true" name="theme-color" content="#CA1773"/> <!-- Discord embed color -->
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vaaako.github.io/Fernanda" />
+	<meta property="og:title" content="Fernanda" />
+	<meta property="og:description" content="Fernanda's website where... have... things..." />
+	<meta property="og:image" content="https://i.imgur.com/ek0GeWg.png" />
+	<!-- Embed end -->
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script> <!-- Showdon -->
+	<script type="text/javascript" src="assets/scripts/defaultPage.js"></script>
 </head>
 <body>
 	<div id="centered-box">
-		<a href="pages/about">Aqui</a> ou ir para o <a href="pages/hall">HALL</a>
-
-		<br><img src='assets/images/fernanda-v2.png'>
 		<hr>
 		<footer>
 			<a href="https://github.com/vaaako" target="_blank">Github</a> • <a href="https://twitter.com/vaaako" target="_blank">Twitter</a>
 		</footer>
 	</div>
 
-	<!-- <h2><p style="text-align: center;">Lançamento no site: </p></h2>
-	<iframe width="300" height="167" frameborder="0" src="https://itch.io/embed/1788839"><a href="https://vaaako.itch.io/room">Room by Vako</a></iframe>
-	<img src="assets/images/room.png" style="width: 300px;">
- -->
-
-<script type="text/javascript">
-	let converter = new showdown.Converter(),
-		text = `
+	<script type="text/javascript">
+		let text = `
 # Fernanda
 Olá<br>
 Bem vindo(a) ao Fernanda!<br>
-Se quiser saber um pouquinho mais, você pode clicar`,
-		html = converter.makeHtml(text);
-	document.getElementById('centered-box').insertAdjacentHTML('afterbegin', html);
-</script>
+Se quiser saber um pouquinho mais, você pode clicar
+[Aqui](pages/about) ou ir para o [HALL](pages/hall)
+
+<br>
+![Fernanda-v2](assets/images/fernanda-v2.png)`;
+		
+		(async () => {
+			await addDefaultPage({
+				'addDefaultFooter': false,
+				'openLinksInNewWindow': false,
+				'markdown': text,
+				'file': false
+			});
+		})();
+	</script>
 	
 </body>
 </html>

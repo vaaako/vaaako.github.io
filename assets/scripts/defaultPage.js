@@ -1,5 +1,5 @@
-const ROOT = '/';
-// const ROOT = '/Fernanda'; // Github pages
+// const ROOT = '/';
+const ROOT = '/Fernanda'; // Github pages
 var CONVERTER;
 
 function loadShowdown(callback) {	
@@ -90,11 +90,22 @@ async function getMarkdown(markdown, file=true, openLinksInNewWindow=true) { // 
 
 
 async function addDefaultPage(config) {
-	// headerTitle, back, onlyFooter, appendToBeggining, markdown, file
+	/**
+	 * headerTitle          = Tag title
+	 * addDefaultFooter     = Add Footer or not
+	 * back                 = Back link
+	 * onlyFooter           = Add only the footer or div too
+	 * appendToBeggining    = Append footer to the beggining of the div
+	 * markdown             = Markdown to convert to HTML
+	 * file                 = Markdown is file or not
+	 * openLinksInNewWindow = Name itself
+	*/
 	await addDefaultHeader(config.headerTitle, config.pMargin);
-	await addDefaultFooter(config.back, config.onlyFooter, config.appendToBeggining);
+
+	config.addDefaultFooter = config.addDefaultFooter ?? true; // If was not defined is true by default
+	if(config.addDefaultFooter)
+		await addDefaultFooter(config.back, config.onlyFooter, config.appendToBeggining);
 
 	// Can get error if showdown doens't fully loads
 	loadShowdown(() => getMarkdown(config.markdown, config.file, config.openLinksInNewWindow));
-	// await getMarkdown(config.markdown, config.file, config.openLinksInNewWindow);
 }
