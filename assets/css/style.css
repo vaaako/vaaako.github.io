@@ -11,7 +11,8 @@ body {
 
 	text-align: center;
 	border: 2px solid;
-	border-color: black;
+/*	border-color: black;*/
+	border-color: #ca1773;
 
 	/* Centralizar horizontalmente usando margin left e right auto */
 	padding-top: 20px;

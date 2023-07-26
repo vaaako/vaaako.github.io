@@ -3,7 +3,7 @@ const ROOT = '/Fernanda'; // Github pages
 var CONVERTER;
 
 function loadShowdown(callback) {	
-	// Add Showdown to header (add like above doesn't work)	
+	// Add Showdown to header (add like in addDefaultHeader doesn't work)	
 	let script = document.createElement('script');
 	script.src = 'https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js';
 	script.onload = callback;
@@ -27,19 +27,16 @@ async function addDefaultHeader(title='Fernanda', pMargin=-15) {
 			margin-top: ${pMargin}px;
 			margin-bottom: 10px;
 		}
-	</style>
-	`;
+	</style>`;
 
 
 	// Add header
 	document.getElementsByTagName('head')[0].insertAdjacentHTML('afterbegin', header);
-	console.log("Loaded Header!");
+	// console.log("Loaded Header!");
 }
 
 
 async function addDefaultFooter(back, onlyFooter=false, appendToBeggining=false) {
-	// (back=='/') ? ROOT : ROOT + back; 
-
 	if(back=='/') {
 		back = ROOT;
 	} else if(!back){
@@ -58,22 +55,19 @@ async function addDefaultFooter(back, onlyFooter=false, appendToBeggining=false)
 		console.log("Only footer")
 		let box = document.getElementById('centered-box');
 		(appendToBeggining) ? box.insertAdjacentHTML('afterbegin', footer)
-			: box.innerHTML = footer;
+			: box.innerHTML += footer;
 	} else {
 		console.log("Div")
 		let body = document.getElementsByTagName('body')[0];
 		(appendToBeggining) ? body.insertAdjacentHTML('afterbegin', html)
 			: body.innerHTML = html;
 	}
-
-
-	// if(markdown)
-	// 	await getMarkdown(markdown); // Add page content from markdown file
 }
 
 
 async function getMarkdown(markdown, file=true, openLinksInNewWindow=true) { // For some reason without file doens't work (???)
-	console.log('Loading markdown!');
+	if(markdown==null) return;
+	// console.log('Loading markdown!');
 
 	if(file) {
 		let res = await fetch(markdown);
@@ -96,8 +90,8 @@ async function addDefaultPage(config) {
 	 * back                 = Back link
 	 * onlyFooter           = Add only the footer or div too
 	 * appendToBeggining    = Append footer to the beggining of the div
-	 * markdown             = Markdown to convert to HTML
-	 * file                 = Markdown is file or not
+	 * markdown             = Markdown to convert to HTML (null for generate nothing)
+	 * file                 = Markdown is file or not (only if markdown is a true value)
 	 * openLinksInNewWindow = Name itself
 	*/
 	await addDefaultHeader(config.headerTitle, config.pMargin);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../assets/scripts/defaultPage.js"></script>
+
+	<style type="text/css">
+		/* Expand box to better view of the code */
+		#centered-box {
+			width: 80%;
+			text-align: unset;
+		}
+
+		#centered-box footer {
+			text-align: center;
+		}
+
+		@media (max-width: 767px) {
+			#centered-box {
+				width: 85%;
+  			}
+		}
+	</style>
+</head>
+<body>
+	<div id="centered-box">
+		<h1>defaultPage.js</h1>
+		<p>
+			Esse é o código que faz a magia do site acontecer, você deve ter lido o funcionamento
+			 na página anterior <br>aqui está o código caso queira ler e entender melhor.
+		</p>
+		<script src="https://emgithub.com/embed-v2.js?target=https://github.com/vaaako/Fernanda/blob/markdown/assets/scripts/defaultPage.js&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>	
+	</div>
+
+	<script type="text/javascript">
+		(async () => {
+			await addDefaultPage({
+				'headerTitle': 'Default Page Code',
+				'pMargin': 0,
+
+				'back': 'about',
+				'onlyFooter': true,
+				'appendToBeggining': false,
+
+				'openLinksInNewWindow': true,
+				'markdown': null
+				// 'file': false
+			});
+		})();
+	</script>
+</body>
+</html>
