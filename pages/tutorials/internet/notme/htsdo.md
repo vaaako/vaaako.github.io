@@ -12,6 +12,7 @@
 - Darkent Market Listings: <https://www.deeoditweb.com>
 - Comunication? PGP!
     - <https://darkwebnews.com/guide-pgp-encryption-communications/>
+    - Corsa: <https://i.imgur.com/wnfCZIW.png>
     - <https://www.pitt.edu/~poole/PGM.htm>
     - OpenPGP: <https://www.openpgp.org/>
 
