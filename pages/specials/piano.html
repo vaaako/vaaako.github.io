@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fernanda | Piano</title>
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		body {
+			background-color: rebeccapurple;
+		}
+
+		.piano {
+			background-color: #121212;
+			width: 1000px;
+			height: 400px;
+
+			margin: 100px auto;
+			border-radius: 20px;
+
+			display: flex;
+			flex-direction: column;
+
+			align-items: center;
+			justify-content: space-between; /* keys at bottom */
+		}
+
+		.controls {
+			color: rgba(255, 255, 255, 0.8);
+
+			width: 100%;
+
+			padding: 30px;
+			display: flex;
+			justify-content: space-between; /* Space between text and switch */
+		}
+
+		.controls h1 {
+			font-weight: 500;
+			font-size: 1.4rem;
+		}
+
+
+		.switch {
+			width: 50px;
+			height: 25px;
+			background-color: #555;
+			display: flex;
+			border-radius: 50px;
+
+			padding: 4px; /* Ball to center */
+
+			justify-content: flex-start;
+		}
+
+		.switch__button {
+			height: 100%;
+			aspect-ratio: 1/1; /* Ball proportion */
+			background-color: #ddd;
+			border-radius: 20px;
+		}
+
+		.switch--active {
+			background-color: #006eff;
+			justify-content: flex-end;
+		}
+
+		.checkbox__label {
+			display: flex;
+			gap: 15px;
+		}
+
+
+
+
+		.piano__keys {
+			width: 100%;
+			height: 300px;
+			background-color: #181818;
+			border-radius: 15px;
+			
+			padding: 30px 40px;
+			display: flex;
+		}
+
+		.key {
+			position: relative;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			padding: 8px;
+
+			user-select: none; /* don't select text */
+		}
+
+		.key span {
+			font-weight: 600;
+			position: absolute; /* for the characters not to change the size of the keys */
+			transition-duration: 300ms;
+		}
+
+		.white {
+			background-color: white;
+			color: rgba(0, 0, 0, 0.3);
+
+			flex-grow: 1; /* Instead of width, flex-grow shares the space with all elemetns equally */
+			border-radius: 5px;
+			border-bottom: 8px solid #ddd; /* bottom shadow */
+
+			margin-left: -17px; /* -17 to have a gap between */
+			z-index: 1;
+		}
+
+		.black {
+			width: 40px;
+			height: 150px;
+			background: linear-gradient(black, #333);
+			color: rgba(255, 255, 255, 0.3);
+
+			border-radius: 0 0 5px 5px;
+			border-bottom: 8px solid #222;
+			margin-left: -20px; /* Above white keys */
+			z-index: 2; /* Stay above */
+		}
+
+		.black--pressed {
+			background: linear-gradient(#222, black);
+			border-bottom: none;
+			height: 148px; /* Original height is 150px */
+		}
+
+
+		/* Adjust white keys that don't have gap between */
+		.piano__keys .white:nth-child(1) {
+			margin-left: 0px;
+		}
+
+		.piano__keys .white:nth-child(5) {
+			margin-right: 20px;
+		}
+
+		.piano__keys .white:nth-child(12) {
+			margin-right: 20px;
+		}
+
+		.piano__keys .white:nth-child(17) {
+			margin-right: 20px;
+		}
+
+		.disabled-keys span {
+			opacity: 0;
+}
+	</style>
+</head>
+<body>
+	<section class="piano">
+		<section class="controls">
+			<h1>Vako Beethoven</h1>
+
+			<label class="checkbox__label">
+				Show keys
+				<span class="switch">
+					<span class="switch__button"></span> <!-- little ball -->
+				</span>
+				<input type="checkbox" class="checkbox__keys" hidden>
+			</label>
+		</section>
+
+		<section class="piano__keys disabled-keys">
+			<div class="key white" data-note="1"> <span>TAB</span> </div>
+			<div class="key black" data-note="2"> <span>1</span> </div>
+			<div class="key white" data-note="3"> <span>q</span> </div>
+			<div class="key black" data-note="4"> <span>2</span> </div>
+			<div class="key white" data-note="5"> <span>w</span> </div>
+			<div class="key white" data-note="6"> <span>e</span> </div>
+
+			<div class="key black" data-note="7"> <span>4</span> </div>
+			<div class="key white" data-note="8"> <span>r</span> </div>
+			<div class="key black" data-note="9"> <span>5</span> </div>
+			<div class="key white" data-note="10"> <span>t</span> </div>
+			<div class="key black" data-note="11"> <span>6</span> </div>
+			<div class="key white" data-note="12"> <span>y</span> </div>
+			<div class="key white" data-note="13"> <span>u</span> </div>
+
+			<div class="key black" data-note="14"> <span>8</span> </div>
+			<div class="key white" data-note="15"> <span>i</span> </div>
+			<div class="key black" data-note="16"> <span>9</span> </div>
+			<div class="key white" data-note="17"> <span>o</span> </div>
+			<div class="key white" data-note="18"> <span>p</span> </div>
+
+			<div class="key black" data-note="19"> <span>-</span> </div>
+			<div class="key white " data-note="20"> <span>[</span> </div>
+			
+			<div class="key black" data-note="21"> <span>=</span> </div>
+			<div class="key white " data-note="22"> <span>]</span> </div>
+			<div class="key black" data-note="23"> <span>&larr;</span> </div>
+			<div class="key white" data-note="24"> <span>/</span> </div>
+
+	<script type="text/javascript">
+		const keys = document.querySelectorAll('.key');
+		const checkbox = document.querySelector('.checkbox__keys');
+		const switcher = document.querySelector('.switch');
+		const keySection = document.querySelector('.piano__keys');
+
+		const playNote = (note) => {
+			const audio = new Audio(`./notes/${note}.wav`);
+			audio.play();
+		}
+
+		const handleMouseDown = (key) => {
+			playNote(key.getAttribute('data-note'));
+
+			if(key.className.includes('white')) {
+				key.style.background = '#ddd'
+			} else {
+				key.classList.add('black--pressed');
+			}
+		}
+
+		const handleMouseUp = (key) => {
+			(key.className.includes('white')) ? key.style.background = 'white'
+				: key.classList.remove('black--pressed');
+		}
+
+		keys.forEach((key) => {
+			key.addEventListener('mousedown', () => handleMouseDown(key));
+			key.addEventListener('mouseup', () => handleMouseUp(key));
+		});
+
+		checkbox.addEventListener('change', ({ target }) => {
+			if(target.checked) {
+				switcher.classList.remove('switch--active');
+				keySection.classList.add('disabled-keys');
+			} else {
+				switcher.classList.add('switch--active');
+				keySection.classList.remove('disabled-keys');
+
+			}
+
+		});
+
+
+		const keysMap = {
+			'Tab': keys[0],
+			'1': keys[1],
+			'q': keys[2],
+			'2': keys[3],
+			'w': keys[4],
+
+			'e': keys[5],
+			'4': keys[6],
+			'r': keys[7],
+			'5': keys[8],
+			't': keys[9],
+			'6': keys[10],
+			'y': keys[11],
+			'u': keys[12],
+
+			'8': keys[13],
+			'i': keys[14],
+			'9': keys[15],
+			'o': keys[16],
+			'p': keys[17],
+
+			'-': keys[18],
+			'[': keys[19],
+			'=': keys[20],
+			']': keys[21],
+			'Backspace': keys[22],
+			'/': keys[23],
+		}
+
+		document.addEventListener('keydown', (event) => {
+			let key = event.key;
+			let keyElement = keysMap[key];
+
+			event.preventDefault(); // Prevent TAB to affect page
+			if(keyElement)
+				handleMouseDown(keyElement);
+		});
+
+		document.addEventListener('keyup', (event) => {
+			let key = event.key;
+			let keyElement = keysMap[key];
+			if(keyElement)
+				handleMouseUp(keyElement);
+		});
+	</script>
+		</section>
+	</section>
+</body>
+</html>

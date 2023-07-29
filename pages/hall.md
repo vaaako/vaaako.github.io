@@ -51,3 +51,5 @@ Minhas reviews sobre coisas, a maioria estão em TXT normal, mas se quer reviews
  • [Leitura](specials/leitura)
  • [Random](specials/random)
  • [Room](specials/room)
+ • [Clock](specials/clock)
+ • [Piano](specials/piano)
