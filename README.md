@@ -11,8 +11,6 @@ As páginas principais possuem um arquivo `Markdown` separado, onde fica o conte
  a função `addDefaultPage` (`assets/scripts/defaultPage.js`) é acionada, ela lê o conteúdo do arquivo `Markdown`,
  converte para `HTML` e adiciona na página *(As vezes junto com o header e o footer)*, é quase uma **framework** própria
 
-Para mais informações cheque em: <https://vaaako.github.io/Fernanda>
-
 ### Github pages
 Por causa do jeito ruim que o github pages funciona, fui obrigada a mudar todo o meus paths
 
